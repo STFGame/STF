@@ -1,0 +1,421 @@
+fileFormatVersion: 2
+guid: 9f098f391bbba5543898cfac8f3fe917
+timeCreated: 1520195940
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: left_hand_group
+    100002: PM_bone_Head
+    100004: PM_bone_Hips
+    100006: PM_bone_LeftArm
+    100008: PM_bone_LeftFingerBase
+    100010: PM_bone_LeftFoot
+    100012: PM_bone_LeftForeArm
+    100014: PM_bone_LeftHand
+    100016: PM_bone_LeftLeg
+    100018: PM_bone_LeftToeBase
+    100020: PM_bone_LeftUpLeg
+    100022: PM_bone_Neck
+    100024: PM_bone_Reference
+    100026: PM_bone_RightArm
+    100028: PM_bone_RightFingerBase
+    100030: PM_bone_RightFoot
+    100032: PM_bone_RightForeArm
+    100034: PM_bone_RightHand
+    100036: PM_bone_RightLeg
+    100038: PM_bone_RightToeBase
+    100040: PM_bone_RightUpLeg
+    100042: PM_bone_Spine
+    100044: PM_mesh__left_upperleg
+    100046: PM_mesh_head
+    100048: PM_mesh_left_foot
+    100050: PM_mesh_left_forearm
+    100052: PM_mesh_left_hand
+    100054: PM_mesh_left_lowerleg
+    100056: PM_mesh_left_sword_blade
+    100058: PM_mesh_left_sword_hilt
+    100060: PM_mesh_left_upperarm
+    100062: PM_mesh_pelvis
+    100064: PM_mesh_right_foot
+    100066: PM_mesh_right_forearm
+    100068: PM_mesh_right_hand
+    100070: PM_mesh_right_lowerleg
+    100072: PM_mesh_right_sword_blade
+    100074: PM_mesh_right_sword_hilt
+    100076: PM_mesh_right_upperarm
+    100078: PM_mesh_right_upperleg
+    100080: PM_mesh_stem
+    100082: PM_mesh_torso
+    100084: //RootNode
+    100086: right_hand_group
+    400000: left_hand_group
+    400002: PM_bone_Head
+    400004: PM_bone_Hips
+    400006: PM_bone_LeftArm
+    400008: PM_bone_LeftFingerBase
+    400010: PM_bone_LeftFoot
+    400012: PM_bone_LeftForeArm
+    400014: PM_bone_LeftHand
+    400016: PM_bone_LeftLeg
+    400018: PM_bone_LeftToeBase
+    400020: PM_bone_LeftUpLeg
+    400022: PM_bone_Neck
+    400024: PM_bone_Reference
+    400026: PM_bone_RightArm
+    400028: PM_bone_RightFingerBase
+    400030: PM_bone_RightFoot
+    400032: PM_bone_RightForeArm
+    400034: PM_bone_RightHand
+    400036: PM_bone_RightLeg
+    400038: PM_bone_RightToeBase
+    400040: PM_bone_RightUpLeg
+    400042: PM_bone_Spine
+    400044: PM_mesh__left_upperleg
+    400046: PM_mesh_head
+    400048: PM_mesh_left_foot
+    400050: PM_mesh_left_forearm
+    400052: PM_mesh_left_hand
+    400054: PM_mesh_left_lowerleg
+    400056: PM_mesh_left_sword_blade
+    400058: PM_mesh_left_sword_hilt
+    400060: PM_mesh_left_upperarm
+    400062: PM_mesh_pelvis
+    400064: PM_mesh_right_foot
+    400066: PM_mesh_right_forearm
+    400068: PM_mesh_right_hand
+    400070: PM_mesh_right_lowerleg
+    400072: PM_mesh_right_sword_blade
+    400074: PM_mesh_right_sword_hilt
+    400076: PM_mesh_right_upperarm
+    400078: PM_mesh_right_upperleg
+    400080: PM_mesh_stem
+    400082: PM_mesh_torso
+    400084: //RootNode
+    400086: right_hand_group
+    2100000: lambert2
+    2100002: initialShadingGroup1
+    4300000: PM_mesh_head
+    4300002: PM_mesh_stem
+    4300004: PM_mesh_left_hand
+    4300006: PM_mesh_left_sword_hilt
+    4300008: PM_mesh_left_sword_blade
+    4300010: PM_mesh_right_hand
+    4300012: PM_mesh_right_sword_hilt
+    4300014: PM_mesh_right_sword_blade
+    4300016: PM_mesh_torso
+    4300018: PM_mesh_right_forearm
+    4300020: PM_mesh_left_lowerleg
+    4300022: PM_mesh_left_foot
+    4300024: PM_mesh_right_lowerleg
+    4300026: PM_mesh_right_foot
+    4300028: PM_mesh_pelvis
+    4300030: PM_mesh__left_upperleg
+    4300032: PM_mesh_right_upperarm
+    4300034: PM_mesh_right_upperleg
+    4300036: PM_mesh_left_forearm
+    4300038: PM_mesh_left_upperarm
+    7400000: Idle
+    7400002: Walk
+    7400004: Run
+    7400006: Dash
+    7400008: Sneak
+    7400010: Crouch Idle
+    7400012: Crouch Walk
+    9500000: //RootNode
+    13700000: PM_mesh__left_upperleg
+    13700002: PM_mesh_head
+    13700004: PM_mesh_left_foot
+    13700006: PM_mesh_left_forearm
+    13700008: PM_mesh_left_hand
+    13700010: PM_mesh_left_lowerleg
+    13700012: PM_mesh_left_sword_blade
+    13700014: PM_mesh_left_sword_hilt
+    13700016: PM_mesh_left_upperarm
+    13700018: PM_mesh_pelvis
+    13700020: PM_mesh_right_foot
+    13700022: PM_mesh_right_forearm
+    13700024: PM_mesh_right_hand
+    13700026: PM_mesh_right_lowerleg
+    13700028: PM_mesh_right_sword_blade
+    13700030: PM_mesh_right_sword_hilt
+    13700032: PM_mesh_right_upperarm
+    13700034: PM_mesh_right_upperleg
+    13700036: PM_mesh_stem
+    13700038: PM_mesh_torso
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 160
+      lastFrame: 199
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 129
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dash
+      takeName: Take 001
+      firstFrame: 329
+      lastFrame: 359
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sneak
+      takeName: Take 001
+      firstFrame: 1670
+      lastFrame: 1724
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crouch Idle
+      takeName: Take 001
+      firstFrame: 1833
+      lastFrame: 1872
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Crouch Walk
+      takeName: Take 001
+      firstFrame: 1765
+      lastFrame: 1805
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
