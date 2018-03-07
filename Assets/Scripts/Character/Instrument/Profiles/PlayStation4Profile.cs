@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Character.Instrument.Profiles
 {
     public class PlayStation4Profile : Instrument
     {
-        public string[] Name = { "Wireless Controller" };
-
-        public PlayStation4Profile(Instrument obj) : base(obj)
+        public PlayStation4Profile()
         {
-            foreach (var name in obj.GetType().GetFields())
+            Name = "PlayStation4 Controller";
+
+            JoystickNames = new[]
             {
-                this.GetType().GetProperty(name.Name).SetValue(this, name.GetValue(obj), null);
-            }
+                "Wireless Controller"
+            };
         }
     }
 }

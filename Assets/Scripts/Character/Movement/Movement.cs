@@ -1,4 +1,6 @@
-﻿using Character.Utility;
+﻿using Character.Instrument;
+using Character.Instrument.Profiles;
+using Character.Utility;
 using System.Collections;
 using UnityEngine;
 
@@ -6,24 +8,29 @@ namespace Character.CC
 {
     public class Movement : MonoBehaviour
     {
-        [HideInInspector]public Rigidbody rigidBody;
+        private Rigidbody rigidBody;
         private Animator animator;
-        private Animation anim;
         private MovementBehaviour movementBehaviour;
+        private Animation anim;
 
         [Header("Movement Settings")]
-        [SerializeField] private float baseSpeed = 140;
-        [SerializeField] private float dashSpeed = 180;
+        [SerializeField] private float baseSpeed = 200f;
+        [SerializeField] private float dashSpeed = 400f;
 
         [Header("Animation Settings")]
         [SerializeField] private float smoothDamping = 0.02f;
+        [SerializeField] private float rotationSpeed = 10f;
 
         private float horizontal;
         private float vertical;
 
         private bool turn = false;
         private bool dashVal = false;
-        [HideInInspector]public float rotation = 0f;
+        private float rotation = 90f;
+
+        private void OnEnable() { GetComponent<Instru>().AxleUnit += Move; }
+
+        private void OnDisable() { GetComponent<Instru>().AxleUnit -= Move; }
 
         private void Awake()
         {
@@ -39,28 +46,52 @@ namespace Character.CC
                 movementBehaviour.movement = this;
         }
 
+        private void Move(Vector2 value)
+        {
+            Vector3 move = new Vector3(value.x, 0f, 0f);
+            rigidBody.AddForce((move * baseSpeed) * Time.deltaTime, ForceMode.Impulse);
+
+            QuaternionRotation(value);
+            MoveAnimations(value);
+            Turn(value);
+        }
+
+        private void Turn(Vector2 value)
+        {
+            turn = (rigidBody.transform.forward.x * value.x < 0f);
+        }
+
+        private void QuaternionRotation(Vector2 value)
+        {
+            rotation = (value.x < 0f) ? 270 : (value.x > 0f) ? 90f : rotation;
+
+            Quaternion angleAxis = Quaternion.AngleAxis(rotation, Vector3.up);
+            Quaternion rotate = Quaternion.Slerp(rigidBody.rotation, angleAxis, Time.deltaTime * rotationSpeed);
+            rigidBody.rotation = (rotate);
+        }
+
         private void Update()
         {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            //horizontal = Input.GetAxis("Horizontal");
+            //vertical = Input.GetAxis("Vertical");
 
-            turn = (rigidBody.transform.forward.x * horizontal) < 0f;
-            dashVal = Input.GetKey(KeyCode.Joystick1Button3);
+            //turn = (rigidBody.transform.forward.x * horizontal) < 0f;
+            //dashVal = Input.GetKey(KeyCode.Joystick1Button3);
 
-            rotation = (horizontal < 0f) ? -90 : (horizontal > 0f) ? 90 : rotation;
+            //rotation = (horizontal < 0f) ? -90 : (horizontal > 0f) ? 90 : rotation;
 
-            Quaternion targetRot = Quaternion.Euler(0f, rotation, 0f);
-            Quaternion rotate = Quaternion.Slerp(rigidBody.rotation, targetRot, Time.deltaTime * 10.0f);
-            rigidBody.transform.rotation = (rotate);
+            //Quaternion angleAxis = Quaternion.AngleAxis(rotation, Vector3.up);
+            //Quaternion rotate = Quaternion.Slerp(rigidBody.rotation, angleAxis, Time.deltaTime * 10.0f);
+            //rigidBody.rotation = (rotate);
 
-            MoveAnimations();
+            //MoveAnimations();
         }
 
         private void FixedUpdate()
         {
-            float speed = (dashVal) ? dashSpeed : baseSpeed;
-            Vector3 move = new Vector3(horizontal, 0f, 0f);
-            rigidBody.AddForce((move * speed) * Time.deltaTime, ForceMode.Impulse);
+            //float speed = (dashVal) ? dashSpeed : baseSpeed;
+            //Vector3 move = new Vector3(horizontal, 0f, 0f);
+            //rigidBody.AddForce((move * speed) * Time.deltaTime, ForceMode.Impulse);
         }
 
         public void Rotate(int s)
@@ -68,12 +99,12 @@ namespace Character.CC
             Debug.Log("In rotate: " + rotation);
         }
 
-        private void MoveAnimations()
+        private void MoveAnimations(Vector2 value)
         {
             //animator.SetBool("Turn", turn);
-            animator.SetBool("Dash", dashVal);
-            animator.SetFloat("XAxis", Mathf.Abs(horizontal), smoothDamping, Time.deltaTime);
-            animator.SetFloat("YAxis", vertical, smoothDamping, Time.deltaTime);
+            //animator.SetBool("Dash", dashVal);
+            animator.SetFloat("XAxis", Mathf.Abs(value.x), smoothDamping, Time.deltaTime);
+            animator.SetFloat("YAxis", value.y, smoothDamping, Time.deltaTime);
         }
     }
 }

@@ -11,16 +11,16 @@ namespace Character.CC
 
         [Header(header: "Jump Settings", order = 1)]
 
-        [SerializeField]
-        private float jumpHeight;
-        [SerializeField] private int numberOfJumps;
+        [SerializeField] private float jumpHeight = 30f;
+        [SerializeField] private int numberOfJumps = 2;
+        [SerializeField] private float downPushFactor = 200f;
 
         public bool isGrounded = true;
         private bool jumped = false;
         private bool fall = false;
         private float crest;
 
-        private float drag;
+        private float downPush = 0f;
 
         private void Awake()
         {
@@ -28,16 +28,30 @@ namespace Character.CC
             animator = GetComponent<Animator>();
             capsuleCollider = GetComponent<CapsuleCollider>();
 
-            drag = rigidBody.drag;
-
             GetComponent<Collides>().OnGrounded += Grounded;
         }
 
         private void Update()
         {
+            ApplyForceDown();
+
             jumped = (Input.GetKeyDown(KeyCode.Joystick1Button1));
             fall = CrestReached(rigidBody.position.y);
             JumpAnimations();
+        }
+
+        private void ApplyForceDown()
+        {
+            if (!isGrounded)
+            {
+                if(downPush < downPushFactor)
+                    downPush += Time.deltaTime * downPushFactor;
+                rigidBody.AddForce(Vector3.down * downPush);
+
+                return;
+            }
+
+            downPush = 0f;
         }
 
         private void JumpVelocity(int jumpStart)
