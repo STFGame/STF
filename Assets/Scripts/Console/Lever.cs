@@ -8,18 +8,23 @@ namespace Controller.Mechanism
     {
         private float horizontal;
         private float absoluteHorizontal;
+        private float rawHorizontal;
 
         private float vertical;
         private float absoluteVertical;
+        private float rawVertical;
 
         private Vector2 circle;
 
         private float timer = 0f;
 
-        public void OnUpdate(PlayerType playerType)
+        public void OnUpdate(PlayerNumber playerType)
         {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxis("joystick " + (int)playerType + " axis " + 0);
+            vertical = Input.GetAxis("joystick " + (int)playerType + " axis " + 1);
+
+            rawHorizontal = Input.GetAxisRaw("joystick " + (int)playerType + " axis " + 0);
+            rawVertical = Input.GetAxisRaw("joystick " + (int)playerType + " axis " + 1);
 
             absoluteHorizontal = Math.Abs(horizontal);
             absoluteVertical = Math.Abs(vertical);
@@ -54,6 +59,11 @@ namespace Controller.Mechanism
             get { return absoluteHorizontal; }
         }
 
+        public float RawHorizontal
+        {
+            get { return rawHorizontal; }
+        }
+
         public float Vertical
         {
             get { return vertical; }
@@ -63,6 +73,11 @@ namespace Controller.Mechanism
         public float AbsoluteVertical
         {
             get { return absoluteVertical; }
+        }
+
+        public float RawVertical
+        {
+            get { return rawVertical; }
         }
 
         public Vector2 Circle

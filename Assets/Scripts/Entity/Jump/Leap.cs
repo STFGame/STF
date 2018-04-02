@@ -1,5 +1,5 @@
-﻿using Entity.Animation;
-using Entity.Components;
+﻿using Actor.Animation;
+using Actor.Components;
 using Utility.Enums;
 using System;
 using UnityEngine;
@@ -13,7 +13,7 @@ using Controller.Mechanism;
  * These properties include animation parameters as well as other jump parameters.
  */
 
-namespace Entity.Bounces
+namespace Actor.Bounces
 {
     [Serializable]
     public class Leap

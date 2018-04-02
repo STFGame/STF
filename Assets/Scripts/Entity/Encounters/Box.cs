@@ -1,33 +1,79 @@
-﻿using Entity.Components;
+﻿using Actor.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Utility.Enums;
 using Utility.Identifer;
 
-namespace Entity.Encounters
+namespace Actor.Encounters
 {
     public class Box
     {
-        public Box()
-        {
+        private Encounter<bool> encounter;
+        private GameObject gameObject;
+        private BodyArea bodyArea;
 
+        #region Constructors
+        public Box(){}
+
+        public Box(Encounter<bool> encounter)
+        {
+            this.bodyArea = encounter.BodyArea;
+            this.encounter = encounter;
+
+            gameObject = new GameObject();
+        }
+        #endregion
+
+        public void Add<T>() where T : Component
+        {
+            gameObject.AddComponent<T>();
         }
 
-        public static GameObject Create(string tag, string name, Transform parent)
+        public void IsTrigger(bool value)
         {
-            GameObject obj = new GameObject();
-            obj.tag = tag;
-            obj.name = name;
-
-            obj.AddComponent<SphereCollider>();
-            obj.AddComponent<EntityBox>();
-
-            obj.GetComponent<SphereCollider>().isTrigger = true;
-            obj.layer = parent.gameObject.layer;
-
-            return obj;
+            gameObject.GetComponent<Collider>().isTrigger = value;
         }
+
+        #region Setters
+        public void SetTag(string tag)
+        {
+            gameObject.tag = tag;
+        }
+
+        public void SetName(string name)
+        {
+            gameObject.name = name;
+        }
+
+        public void SetLayer(Transform layer)
+        {
+            gameObject.layer = layer.transform.gameObject.layer;
+        }
+
+        public void SetParent(Transform parent)
+        {
+            gameObject.transform.SetParent(parent, false);
+        }
+        #endregion
+
+        #region Properties
+        public BodyArea BodyArea
+        {
+            get { return bodyArea; }
+        }
+
+        public Encounter<bool> Encounter
+        {
+            get { return encounter; }
+        }
+
+        public GameObject GameObject
+        {
+            get { return gameObject; }
+        }
+        #endregion
     }
 }

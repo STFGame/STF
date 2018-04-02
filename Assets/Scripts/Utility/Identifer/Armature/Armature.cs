@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Enums;
 
 namespace Utility.Identifer
 {
@@ -11,37 +12,55 @@ namespace Utility.Identifer
 
         public static bool Search(string name)
         {
-            if (boneName.SearchHead(name))
+            if (boneName.SearchBone(BoneType.Head, name))
                 return true;
-            else if (boneName.SearchHip(name))
+            else if (boneName.SearchBone(BoneType.Hip, name))
                 return true;
-            else if (boneName.SearchElbow(name))
+            else if (boneName.SearchBone(BoneType.Knee, name))
                 return true;
-            else if (boneName.SearchHand(name))
+            else if (boneName.SearchBone(BoneType.Foot, name))
                 return true;
-            else if (boneName.SearchKnee(name))
+            else if (boneName.SearchBone(BoneType.Elbow, name))
                 return true;
-            else if (boneName.SearchFoot(name))
+            else if (boneName.SearchBone(BoneType.Hand, name))
                 return true;
             else
                 return false;
         }
 
-        public static bool Search(string name, out string side)
+        public static bool Search(string name, ref BodyArea bodyArea)
         {
-            side = "NULL";
-            if (boneName.SearchHead(name))
+            string side = "";
+            if (boneName.SearchBone(BoneType.Head, name, ref side))
+            {
+                bodyArea = BodyArea.Head;
                 return true;
-            else if (boneName.SearchHip(name))
+            }
+            else if (boneName.SearchBone(BoneType.Hip, name, ref side))
+            {
+                bodyArea = BodyArea.Hip;
                 return true;
-            else if (boneName.SearchElbow(name))
+            }
+            else if (boneName.SearchBone(BoneType.Knee, name, ref side))
+            {
+                bodyArea = (side == "Right") ? BodyArea.KneeRight : BodyArea.KneeLeft;
                 return true;
-            else if (boneName.SearchHand(name))
+            }
+            else if (boneName.SearchBone(BoneType.Foot, name, ref side))
+            {
+                bodyArea = (side == "Right") ? BodyArea.FootRight : BodyArea.FootLeft;
                 return true;
-            else if (boneName.SearchKnee(name))
+            }
+            else if (boneName.SearchBone(BoneType.Elbow, name, ref side))
+            {
+                bodyArea = (side == "Right") ? BodyArea.ElbowRight : BodyArea.ElbowLeft;
                 return true;
-            else if (boneName.SearchFoot(name))
+            }
+            else if (boneName.SearchBone(BoneType.Hand, name, ref side))
+            {
+                bodyArea = (side == "Right") ? BodyArea.HandRight : BodyArea.HandLeft;
                 return true;
+            }
             else
                 return false;
         }

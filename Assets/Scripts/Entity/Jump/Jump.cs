@@ -1,6 +1,6 @@
 ﻿using Controller.Mechanism;
-using Entity.Animation;
-using Entity.Components;
+using Actor.Animation;
+using Actor.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using UnityEngine;
 using Utility.Enums;
 
-namespace Entity.Jumps
+namespace Actor.Jumps
 {
     [Serializable]
     public class Jump

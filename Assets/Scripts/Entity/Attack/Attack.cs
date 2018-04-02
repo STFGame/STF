@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Entity
+namespace Actor
 {
     [RequireComponent(typeof(Animator))]
     public class Attack : MonoBehaviour

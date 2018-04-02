@@ -1,4 +1,4 @@
-﻿using Entity.Encounters;
+﻿using Actor.Encounters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,20 +6,20 @@ using System.Text;
 using UnityEngine;
 using Utility.Identifer;
 
-namespace Entity
+namespace Actor
 {
     public class EntityBox : MonoBehaviour
     {
-        public Hurtbox hurtbox = new Hurtbox();
+        public Encounter<bool> encounter;
 
         private void OnTriggerEnter(Collider other)
         {
-            hurtbox.OnTriggerEnter(other);
+            encounter.OnTriggerEnter(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            hurtbox.OnTriggerExit(other);
+            encounter.OnTriggerExit(other);
         }
     }
 }

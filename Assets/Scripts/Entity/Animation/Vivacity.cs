@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Entity.Animation
+namespace Actor.Animation
 {
     [Serializable]
     public class Vivacity

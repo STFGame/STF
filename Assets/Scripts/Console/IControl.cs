@@ -8,6 +8,7 @@ namespace Controller.Mechanism
 {
     public interface IControl
     {
+        PlayerNumber PlayerNumber { get; }
         Button GetButton(ButtonType buttonType);
         Lever Lever { get; }
     }

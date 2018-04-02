@@ -27,7 +27,7 @@ namespace Controller.Mechanism
         private float pressTimer = 0f;
         private int press = 0;
 
-        public void OnUpdate(PlayerType playerType, int keyNum)
+        public void OnUpdate(PlayerNumber playerType, int keyNum)
         {
             actionClick = Input.GetKeyDown("joystick " + (int)playerType + " button " + keyNum);
             actionRelease = Input.GetKeyUp("joystick " + (int)playerType + " button " + keyNum);

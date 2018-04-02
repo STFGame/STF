@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Entity.Encounters
+namespace Actor.Encounters
 {
     [Serializable]
     public class Groundbox : Encounter<bool>
     {
-        [SerializeField] private float normalPoint;
-        [SerializeField] private bool onGround = true;
+        [SerializeField] private float normalPoint = 0.5f;
+        [SerializeField] private bool onGround;
 
         private List<Collider> groundList;
 

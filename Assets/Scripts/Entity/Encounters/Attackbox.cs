@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Utility.Enums;
 
-namespace Entity.Encounters
+namespace Actor.Encounters
 {
     [Serializable]
     public class Attackbox : Encounter<bool>
     {
-        [SerializeField] private Collider[] hitboxes;
-
         private bool hasHit = false;
 
-        public override void OnTriggerEnter(Collider other)
+        public Attackbox() { }
+
+        public Attackbox(BodyArea bodyArea)
         {
-            if (other.tag == "Finish")
-                Debug.Log("HIT");
+            this.bodyArea = bodyArea;
         }
     }
 }
