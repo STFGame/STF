@@ -957,8 +957,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655204020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.68, y: 0.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.68, y: 1.99, z: 0}
+  m_LocalScale: {x: 2.9997802, y: 2.99978, z: 2.99978}
   m_Children: []
   m_Father: {fileID: 1080357099}
   m_RootOrder: 2
@@ -1287,7 +1287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1080357099}
   m_Layer: 0
-  m_Name: Assets
+  m_Name: Actors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2247,18 +2247,17 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1616275693}
-  - component: {fileID: 1616275697}
   - component: {fileID: 1616275695}
   - component: {fileID: 1616275694}
-  - component: {fileID: 1616275701}
-  - component: {fileID: 1616275698}
+  - component: {fileID: 1616275697}
   - component: {fileID: 1616275700}
   - component: {fileID: 1616275699}
   - component: {fileID: 1616275696}
   - component: {fileID: 1616275702}
+  - component: {fileID: 1616275698}
   m_Layer: 8
   m_Name: Pumpkin Head -- Main v2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2314,20 +2313,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616275692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581575780a3743745a8f9e53d406264f, type: 3}
+  m_Script: {fileID: 11500000, guid: b9f50245206c9d643b9a896767d4710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementForce: 5
-  aerialSpeed: 0
+  aerialSpeed: 1000
   movement:
-    speed: 6000
+    speed: 3000
     rotationSpeed: 10
   crouch:
-    speed: 2000
+    speed: 1500
     rotationSpeed: 10
     crouchThreshold: -0.65
   dash:
-    speed: 12000
+    speed: 6000
     rotationSpeed: 20
     canDash: 1
     dashThreshold: 0.1
@@ -2357,32 +2356,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616275692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3c1d88407b1b448ad884d61a65056c, type: 3}
+  m_Script: {fileID: 11500000, guid: b9f50245206c9d643b9a896767d4710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  movementForce: 0
+  aerialSpeed: 0
+  movement:
+    speed: 0
+    rotationSpeed: 0
+  crouch:
+    speed: 0
+    rotationSpeed: 0
+    crouchThreshold: -0.65
+  dash:
+    speed: 0
+    rotationSpeed: 0
+    canDash: 1
+    dashThreshold: 0.1
 --- !u!114 &1616275699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1616275692}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8eb0310445841c4e818e4652a7c6d08, type: 3}
+  m_Script: {fileID: 11500000, guid: 488e513040bb1de4483953298d50621e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gravity:
     staticGravity: 0
-    gravityCap: 0
-    gravity: 0
+    gravityCap: 20000
+    gravity: 10000
   jump:
-  - vivacity:
-      parameterName: 
-    jumpHeightTap: 0
-    jumpHeightHold: 0
-    holdThreshold: 0
-    jumpDelay: 0
+    jumpHeightTap: 30
+    jumpHeightHold: 60
+    jumpDelay: 0.1
 --- !u!114 &1616275700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,24 +2400,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616275692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3815df55a1482194c8bad0fe1423d35b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bf49709f3f57fa49b400e87fd917353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
---- !u!114 &1616275701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1616275692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143f02ce053255340ab2dfbb9e3b59ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundbox:
-    normalPoint: 0
-    onGround: 1
 --- !u!114 &1616275702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,9 +2412,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616275692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e903b147cb60f4d8cabb6a4607454d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a9ed6f3a79069d489e1afaeb30cb656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitboxes: 14000000
+  attackboxes: 13000000
 --- !u!1 &1633946005
 GameObject:
   m_ObjectHideFlags: 0

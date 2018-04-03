@@ -12,12 +12,16 @@ namespace Utility.Enums
         Action3,
         Action4,
 
+        LeftLever,
+        RightLever,
+
         RightBumper,
         RightTrigger,
 
         LeftBumper,
         LeftTrigger,
 
-        Start
+        Start,
+        Select
     }
 }

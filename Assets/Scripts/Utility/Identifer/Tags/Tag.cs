@@ -15,7 +15,7 @@ namespace Utility.Identifer
         public static readonly string Player = "Player";
         public static readonly string GameController = "GameController";
         public static readonly string EncounterBox = "EncounterBox";
-        public static readonly string Hurtbox = "Hurtbox";
+        public static readonly string Hitbox = "Hitbox";
         public static readonly string Attackbox = "Attackbox";
     }
 }

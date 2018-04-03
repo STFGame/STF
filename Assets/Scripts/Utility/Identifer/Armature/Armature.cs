@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Actor.Collisions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Utility.Identifer
     {
         private static BoneName boneName = new BoneName();
 
-        public static bool Search(string name)
+        public static bool Contains(string name)
         {
             if (boneName.SearchBone(BoneType.Head, name))
                 return true;
@@ -28,7 +29,7 @@ namespace Utility.Identifer
                 return false;
         }
 
-        public static bool Search(string name, ref BodyArea bodyArea)
+        public static bool Contains(string name, ref BodyArea bodyArea)
         {
             string side = "";
             if (boneName.SearchBone(BoneType.Head, name, ref side))
@@ -61,6 +62,11 @@ namespace Utility.Identifer
                 bodyArea = (side == "Right") ? BodyArea.HandRight : BodyArea.HandLeft;
                 return true;
             }
+            //else if (boneName.SearchBone(BoneType.Bicep, name, ref side))
+            //{
+                //bodyArea = (side == "Right") ? BodyArea.BicepRight : BodyArea.BicepLeft;
+                //return true;
+            //}
             else
                 return false;
         }

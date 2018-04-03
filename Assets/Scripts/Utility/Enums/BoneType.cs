@@ -13,8 +13,10 @@ namespace Utility.Enums
         Hip,
         Thigh,
         Knee,
+        Calf,
         Foot,
 
+        Shoulder,
         Bicep,
         Elbow,
         Forearm,
