@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - EncounterBox
-  - Attackbox
-  - Hitbox
+  - HitBubble
+  - HurtBubble
   layers:
   - Default
   - TransparentFX
