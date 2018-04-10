@@ -33,6 +33,7 @@ namespace Actor
 
             animation.Init(this);
 
+            IsRotating = false;
             Rotation = 0f;
         }
 

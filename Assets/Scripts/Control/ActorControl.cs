@@ -59,8 +59,8 @@ namespace Actor
 
         private void UpdateJump()
         {
-            if (movement.IsRotating)
-                return;
+            //if (movement.IsRotating)
+                //return;
 
             jump.SetJumpHeight(GetButton(ButtonType.Action1).Hold);
             jump.Jump(GetButton(ButtonType.Action1).Consume);

@@ -18,8 +18,12 @@ namespace Actor
 
         private bool isStunned = false;
 
+        private Animator animator;
+
         private void Awake()
         {
+            animator = GetComponent<Animator>();
+
             currentShield = shieldStrength;
         }
 
@@ -34,6 +38,13 @@ namespace Actor
                 StopAllCoroutines();
                 StartCoroutine(Stun());
             }
+
+            if(!isStunned)
+                animator.SetBool("IsBlocking", block);
+            if(isStunned)
+                animator.SetBool("IsBlocking", false);
+
+            animator.SetBool("IsDisabled", isStunned);
         }
 
         private IEnumerator Stun()

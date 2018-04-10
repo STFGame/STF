@@ -46,6 +46,8 @@ namespace Actor
         {
             OnCrest = CrestCheck(transform.localPosition.y);
 
+            print("Jump");
+
             if (!OnGround)
                 rigidbody.AddForce(Vector3.down * gravity);
 

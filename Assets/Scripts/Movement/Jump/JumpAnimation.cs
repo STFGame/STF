@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Actor.Animation
 {
     [Serializable]
-    public class JumpAnimation
+    public class JumpAnimation : IAnimation
     {
         [SerializeField] private string jumpName = "HasJumped";
         [SerializeField] private string fallName = "OnFall";
         [SerializeField] private string landName = "OnGround";
+
+        public Animator Animator { get; private set; }
+        public JumpBehaviour Behaviour { get; private set; }
 
         private Animator animator;
         private JumpBehaviour behaviour;
