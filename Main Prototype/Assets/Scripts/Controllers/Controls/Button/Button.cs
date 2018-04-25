@@ -18,7 +18,7 @@ namespace Controls
         {
             get
             {
-                if(trigger)
+                if (trigger)
                 {
                     trigger = false;
                     return true;
@@ -27,11 +27,14 @@ namespace Controls
             }
         }
 
+        public int KeyID { get; private set; }
+
         private string query;
 
         public Button(string query)
         {
             this.query = query;
+            KeyID = 0;
         }
 
         public void UpdateButton()
@@ -41,6 +44,20 @@ namespace Controls
             Release = Input.GetKeyUp(query);
 
             trigger = trigger || Press;
+
+            SetKey();
+        }
+
+        private void SetKey()
+        {
+            if (Press || Trigger)
+                KeyID = 1;
+            else if (Hold)
+                KeyID = 2;
+            else if (Release)
+                KeyID = 3;
+            else
+                KeyID = 0;
         }
     }
 }

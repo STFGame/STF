@@ -22,7 +22,9 @@ namespace Controls
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i] = new Button(deviceProfile.GetProfile(controlNumber).Query(i));
 
-            joystick = new Joystick(controlNumber);
+            string[] names = { deviceProfile.GetJoystick(controlNumber).Query(0), deviceProfile.GetJoystick(controlNumber).Query(1) };
+
+            joystick = new Joystick(names);
         }
 
         public void UpdateDevice()

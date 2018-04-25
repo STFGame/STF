@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Controls
 {
-    public interface IButtonQuery
+    public interface IControlQuery
     {
         string Query(int index);
     }

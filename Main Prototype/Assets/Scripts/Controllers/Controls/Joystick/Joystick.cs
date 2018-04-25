@@ -23,11 +23,11 @@ namespace Controls
         public bool Right { get; private set; }
         public bool Left { get; private set; }
 
-        private int number;
+        private string[] query;
 
-        public Joystick(int number)
+        public Joystick(string[] query)
         {
-            this.number = number;
+            this.query = query;
         }
 
         public void UpdateJoystick()

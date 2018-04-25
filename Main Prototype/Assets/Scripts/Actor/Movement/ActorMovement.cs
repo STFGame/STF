@@ -28,6 +28,8 @@ namespace Actor
         public int JumpCount { get { return jump.jumpCounter; } }
         public bool HaltMovement { get; set; }
 
+        private bool isTurning = false;
+
         // Use this for initialization
         private void Awake()
         {
@@ -70,8 +72,12 @@ namespace Actor
         //Moves the actor in the direction that it is instructed by
         private void Move(Vector3 direction)
         {
-            Velocity = movement.HorizontalVelocity(direction, rigidbody.velocity);
-            rigidbody.AddForce(Velocity, forceMode);
+
+            if (!isTurning)
+            {
+                Velocity = movement.HorizontalVelocity(direction, rigidbody.velocity);
+                rigidbody.AddForce(Velocity, forceMode);
+            }
 
             Rotate(direction.x);
         }
@@ -88,6 +94,8 @@ namespace Actor
             Quaternion endRotation = Quaternion.Euler(0f, rotation, 0f);
 
             transform.localRotation = Quaternion.RotateTowards(startRotation, endRotation, movement.RotationSpeed);
+
+            isTurning = (transform.localEulerAngles.y != (-1) * rotation);
         }
 
         //A method for jumping. The jump bool is for starting the jump and the height is 

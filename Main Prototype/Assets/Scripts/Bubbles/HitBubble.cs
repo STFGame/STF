@@ -6,14 +6,16 @@ namespace Actor.Bubbles
 {
     public sealed class HitBubble : Bubble
     {
+        [HideInInspector] public float damage;
+
         protected override void OnTriggerEnter(Collider other)
         {
-            throw new System.NotImplementedException();
+            if (other.CompareTag("HurtBubble"))
+                Debug.Log("HIT!");
         }
 
         protected override void OnTriggerExit(Collider other)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -6,15 +6,15 @@ using UnityEngine;
 
 namespace Controls
 {
-    public class ButtonQuery : IButtonQuery
+    public class ButtonQuery : IControlQuery
     {
-        [SerializeField] protected ButtonSetup[] buttonSetup;
+        [SerializeField] protected ControlIdentity[] buttonSetup;
         protected string[] buttonQuery;
 
         public ButtonQuery()
         {
             if (buttonSetup == null)
-                buttonSetup = new ButtonSetup[10];
+                buttonSetup = new ControlIdentity[10];
 
             buttonQuery = new string[buttonSetup.Length];
 

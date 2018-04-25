@@ -6,12 +6,12 @@ using System.Text;
 namespace Controls
 {
     [Serializable]
-    public struct ButtonSetup
+    public struct ControlIdentity
     {
         public int key;
         public int number;
 
-        public ButtonSetup(int key, int number)
+        public ControlIdentity(int key, int number)
         {
             this.key = key;
             this.number = number;

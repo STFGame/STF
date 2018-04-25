@@ -47,81 +47,62 @@ namespace Actor
     [Serializable]
     public class Attack
     {
-        public BodyArea bodyArea = BodyArea.None;
+        [SerializeField] private string attackName = "Base Attack";
+        public BodyArea[] bodyAreas;
         public AttackType attackType = AttackType.None;
 
         [SerializeField] private Damage damage = new Damage(10f, 10f);
         [SerializeField] private Displacement displacement = new Displacement(0f, 0f, 10f);
-        [SerializeField] private Combo combo = new Combo();
 
-        [SerializeField] private Graph enableLength = new Graph(0f, 1f);
+        [SerializeField] private STFRange enableRange = new STFRange(0f, 1f);
 
-        private GameObject hitBubble = null;
-        private bool isEnabled = false;
+        private GameObject[] hitBubble = null;
         private float enableTimer = 0f;
+
+        private bool isEnabled = false;
+        private bool startTimer = false;
 
         public Displacement Displace { get { return displacement; } }
 
-        public Action<int> AttackEvent;
-        private int attackNumber = 0;
+        private int attackId;
 
-        public void Init(GameObject hitBubble, Device device)
+        public void Init(GameObject[] hitBubble)
         {
-            combo.Init(device);
+            attackId = Animator.StringToHash(attackName);
             this.hitBubble = hitBubble;
 
             Enable(false);
         }
 
-        //Perform an attack
-        public bool PerformAttack()
+        public int PerformAttack(int attackId)
         {
             if (hitBubble == null)
-                return false;
+                return 0;
 
-            if (combo.CheckCombo() && !isEnabled)
-            {
-                isEnabled = true;
-                Update_Attack((int)attackType);
-            }
+            if (this.attackId == attackId)
+                startTimer = true;
+
+            Enable(isEnabled || startTimer);
+
             AttackTimer();
 
-            if (isEnabled && enableTimer > enableLength.minimum)
-            {
-                Enable(isEnabled);
-                return true;
-            }
-
-            if (!isEnabled)
-                Update_Attack(0);
-
-            Enable(false);
-
-            return false;
+            return (this.attackId == attackId) ? (int)attackType : 0;
         }
 
         private void AttackTimer()
         {
-            enableTimer = (isEnabled) ? enableTimer + Time.deltaTime : 0;
+            enableTimer = (startTimer) ? enableTimer + Time.deltaTime : 0;
 
-            if (isEnabled)
-                isEnabled = (enableTimer < enableLength.maximum);
-        }
+            if (enableTimer > enableRange.maximum)
+                startTimer = false;
 
-        private void Update_Attack(int number)
-        {
-            if (number == attackNumber)
-                return;
-
-            attackNumber = number;
-
-            if (AttackEvent != null)
-                AttackEvent(attackNumber);
+            isEnabled = (enableTimer > enableRange.minimum && enableTimer < enableRange.maximum);
         }
 
         private void Enable(bool value)
         {
-            hitBubble.SetActive(value);
+            for (int i = 0; i < hitBubble.Length; i++)
+                hitBubble[i].SetActive(value);
         }
     }
 }

@@ -262,16 +262,18 @@
     <Compile Include="Assets\Scripts\Bubbles\HitBubble.cs" />
     <Compile Include="Assets\Scripts\Bubbles\HurtBubble.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraManager.cs" />
-    <Compile Include="Assets\Scripts\Controllers\ComboSystem\ActorCombo.cs" />
-    <Compile Include="Assets\Scripts\Controllers\ComboSystem\Combo.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Controls\ActorControl.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ComboSystem\ComboBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ComboSystem\ComboManager.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ComboSystem\InputBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ComboSystem\Instruction.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Button\Button.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Button\ButtonInput.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Button\ButtonQuery.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Controls\Button\ButtonSetup.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Controls\Button\IButtonQuery.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Controls\Button\ControlIdentity.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Controls\Button\IControlQuery.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Device.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Joystick\Joystick.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Controls\Joystick\JoystickQuery.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\PlayerNumber.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Profiles\DeviceProfile.cs" />
     <Compile Include="Assets\Scripts\Controllers\Controls\Profiles\PlayStation4Profile.cs" />
@@ -283,9 +285,9 @@
     <Compile Include="Assets\Scripts\UI\Button.cs" />
     <Compile Include="Assets\Scripts\UI\Cursor.cs" />
     <Compile Include="Assets\Scripts\UI\Scenes.cs" />
-    <Compile Include="Assets\Scripts\Utility\Graph.cs" />
     <Compile Include="Assets\Scripts\Utility\Gravity.cs" />
     <Compile Include="Assets\Scripts\Utility\GroundCast.cs" />
+    <Compile Include="Assets\Scripts\Utility\STFRange.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

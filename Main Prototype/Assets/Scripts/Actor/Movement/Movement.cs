@@ -65,7 +65,7 @@ namespace Actor.Movements
             if (absDirection > dashControl.minimum && absDirection < dashControl.maximum)
                 dashTimer += Time.deltaTime;
 
-            IsDashing = (absDirection > dashControl.maximum && dashTimer < dashControl.sensitivity);
+            IsDashing = (absDirection > dashControl.maximum && dashTimer < dashControl.threshold);
         }
 
         private void Crouching(float direction)

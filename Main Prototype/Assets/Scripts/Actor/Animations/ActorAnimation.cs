@@ -39,9 +39,6 @@ namespace Actor
             actorMovement = GetComponent<ActorMovement>();
             actorControl = GetComponent<ActorControl>();
             actorSurvival = GetComponent<ActorSurvival>();
-
-            for (int i = 0; i < actorCombat.attacks.Length; i++)
-                actorCombat.attacks[i].AttackEvent += PlayAttackAnim;
         }
 
         private void Update()
@@ -52,6 +49,8 @@ namespace Actor
             PlayJumpAnim(actorControl.device.RightBumper.Press, isFalling, onGround, actorControl.device.LeftStick.Horizontal);
 
             PlayMoveAnim(actorControl.device.LeftStick.Horizontal, actorControl.device.LeftStick.Vertical);
+
+            PlayAttackAnim(0);
         }
 
         public void PlayJumpAnim(bool startJump, bool isFalling, bool onGround, float lean)
@@ -79,8 +78,7 @@ namespace Actor
 
         public void PlayAttackAnim(int attackNumber)
         {
-            print(attackNumber);
-            attack.PlayAttack(attackNumber);
+            attack.PlayAttack(actorCombat.AttackNumber);
         }
 
         private void OnDrawGizmos() { }

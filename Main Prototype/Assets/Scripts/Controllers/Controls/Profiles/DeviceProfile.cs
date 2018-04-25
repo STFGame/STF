@@ -14,7 +14,7 @@ namespace Controls
             this.name = name;
         }
 
-        public IButtonQuery GetProfile(int number)
+        public IControlQuery GetProfile(int number)
         {
             if (ProfileNameList.PlayStation.Contains(name))
             {
@@ -28,6 +28,11 @@ namespace Controls
             }
 
             return null;
+        }
+
+        public IControlQuery GetJoystick(int number)
+        {
+            return new JoystickQuery(number);
         }
     }
 }

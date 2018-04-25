@@ -113,17 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!134 &192932826
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Default (Instance)
-  dynamicFriction: 0.6
-  staticFriction: 0.6
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!1 &302443687
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +178,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!134 &584223140
+PhysicMaterial:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Default (Instance)
+  dynamicFriction: 0.6
+  staticFriction: 0.6
+  bounciness: 0
+  frictionCombine: 0
+  bounceCombine: 0
 --- !u!1 &588875431
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 689934693}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: HurtBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,6 +415,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
+  dashControl:
+    minimum: 0
+    maximum: 0
+    threshold: 0
+  crouchControl:
+    minimum: 0
+    maximum: 0
+    threshold: 0
+  descendControl:
+    minimum: 0
+    maximum: 0
+    threshold: 0
 --- !u!114 &950513034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,8 +452,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitBubbles:
   - {fileID: 1832601020}
+  - {fileID: 1503590551}
   attacks:
-  - bodyArea: 12
+  - attackName: Detroit Smash
+    bodyAreas: 0c00000001000000
+    attackType: 1
+    damage:
+      damage: 0
+      force: 0
+    displacement:
+      directionX: 1
+      directionY: 0
+      speed: 100
+    enableRange:
+      minimum: 0.4
+      maximum: 0.7
+  - attackName: Oklahoma Uppercut
+    bodyAreas: 0c000000
     attackType: 1
     damage:
       damage: 0
@@ -450,14 +477,9 @@ MonoBehaviour:
       directionX: 0
       directionY: 0
       speed: 0
-    combo:
-      comboName: Light Attack
-      combo: 04000000
-      buttonInput: 0
-      timeBetweenPresses: 0.2
-    enableLength:
-      minimum: 0.3
-      maximum: 0.6
+    enableRange:
+      minimum: 0.4
+      maximum: 0.7
 --- !u!114 &950513036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,19 +494,19 @@ MonoBehaviour:
   forceMode: 2
   movement:
     regular:
-      speed: 30
+      speed: 45
       rotationSpeed: 10
     crouch:
       speed: 20
       rotationSpeed: 10
     dash:
-      speed: 45
+      speed: 60
       rotationSpeed: 20
     acceleration: 5
     dashControl:
       minimum: 0.1
       maximum: 0.75
-      sensitivity: 0.1
+      threshold: 0.1
     crouchRange: -0.6
   jump:
     jumpHeight: 5
@@ -502,7 +524,7 @@ MonoBehaviour:
       m_Bits: 4294966985
     color: {r: 1, g: 0.8235294, b: 0, a: 1}
   gravity:
-    gravity: 40
+    gravity: 180
     increase: 1
     decrease: 1
     isEnabled: 1
@@ -657,6 +679,17 @@ Transform:
   m_Father: {fileID: 1252623308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!134 &1093101478
+PhysicMaterial:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Default (Instance)
+  dynamicFriction: 0.6
+  staticFriction: 0.6
+  bounciness: 0
+  frictionCombine: 0
+  bounceCombine: 0
 --- !u!4 &1113590968 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0ac31279de4fa7748850a557ad0f0fc1, type: 3}
@@ -1017,6 +1050,69 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ac31279de4fa7748850a557ad0f0fc1, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1503590551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1503590552}
+  - component: {fileID: 1503590554}
+  - component: {fileID: 1503590553}
+  m_Layer: 0
+  m_Name: Hit Bubble Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503590552
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503590551}
+  m_LocalRotation: {x: 0.46895304, y: -0.5292282, z: 0.5292288, w: 0.46895367}
+  m_LocalPosition: {x: -0.0000009625745, y: -0.000000031520162, z: 0.00000001583783}
+  m_LocalScale: {x: 1.0000004, y: 1.0000004, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2068877732}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1503590553
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503590551}
+  m_Material: {fileID: 584223140}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.72
+  m_Center: {x: 0, y: 0.39, z: 0}
+--- !u!114 &1503590554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503590551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce78702fcf73dc44d937e252876157f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aspects:
+    parent: {fileID: 2068877732}
+    colliderType: 1
+    bodyArea: 1
+    radius: 0.72
+    center: {x: 0, y: 0.39, z: 0}
+    size: {x: 0, y: 0, z: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
+  isEnabled: 1
+  damage: 0
 --- !u!1 &1620251200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1355,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832601020}
-  m_Material: {fileID: 192932826}
+  m_Material: {fileID: 1093101478}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -1285,6 +1381,7 @@ MonoBehaviour:
     size: {x: 0, y: 0, z: 0}
     color: {r: 1, g: 0, b: 0, a: 1}
   isEnabled: 1
+  damage: 0
 --- !u!1001 &1874784129
 Prefab:
   m_ObjectHideFlags: 0
@@ -1356,3 +1453,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 31.223944, y: 6.556, z: 25.699093}
   m_Center: {x: 0, y: -1.052451e-14, z: -11.849546}
+--- !u!1 &2028705017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2028705018}
+  - component: {fileID: 2028705020}
+  - component: {fileID: 2028705019}
+  m_Layer: 8
+  m_Name: ComboManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028705018
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028705017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 950513032}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2028705019
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028705017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83ffdbc476624b140ae4dc7bb76c4d94, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2028705020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028705017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fae4d684b8a3b7478601088ad1efed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputBehaviour: {fileID: 0}
+  comboBehaviour: {fileID: 0}
+  up:
+    count: 0
+    resetTime: 0.5
+  down:
+    count: 0
+    resetTime: 0.5
+  right:
+    count: 0
+    resetTime: 0.5
+  left:
+    count: 0
+    resetTime: 0.5
+  onGround: 1
+--- !u!4 &2068877732 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400022, guid: 0ac31279de4fa7748850a557ad0f0fc1, type: 3}
+  m_PrefabInternal: {fileID: 1256125667}

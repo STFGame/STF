@@ -7,12 +7,12 @@ using UnityEngine;
 namespace Utility
 {
     [Serializable]
-    public struct Graph
+    public struct STFRange
     {
         public float minimum;
         public float maximum;
 
-        public Graph(float minimum, float maximum)
+        public STFRange(float minimum, float maximum)
         {
             this.minimum = minimum;
             this.maximum = maximum;

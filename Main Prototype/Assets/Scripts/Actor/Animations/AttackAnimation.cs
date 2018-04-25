@@ -20,17 +20,6 @@ namespace Actor.Animations
 
         public void PlayAttack(int attack)
         {
-            if (this.attack > 0)
-            {
-                timer += Time.deltaTime;
-
-                if(timer >= saveTimer)
-                {
-                    timer = 0f;
-                    this.attack = 0;
-                }
-            }
-
             this.attack = attack;
 
             animator.SetInteger(attackName, attack);
