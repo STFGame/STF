@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revise", "Revise.csproj", "{0511E721-784F-3D44-77C7-85E8B31F16CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revise.Editor", "Revise.Editor.csproj", "{A1798D01-87A1-0ECA-86C0-25F304BECAE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0511E721-784F-3D44-77C7-85E8B31F16CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0511E721-784F-3D44-77C7-85E8B31F16CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0511E721-784F-3D44-77C7-85E8B31F16CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0511E721-784F-3D44-77C7-85E8B31F16CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1798D01-87A1-0ECA-86C0-25F304BECAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1798D01-87A1-0ECA-86C0-25F304BECAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1798D01-87A1-0ECA-86C0-25F304BECAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1798D01-87A1-0ECA-86C0-25F304BECAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
