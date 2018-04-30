@@ -1,9 +1,11 @@
-﻿using Actor.Bubbles;
+﻿using Actor.Animations;
+using Actor.Bubbles;
 using Actor.Combat;
 using Actor.Survivability;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility;
 
 namespace Actor
 {
@@ -21,6 +23,13 @@ namespace Actor
         public int HitIndex { get; private set; }
 
         private bool previousDisable = true;
+
+        private SurvivalAnim survivalAnimation = new SurvivalAnim();
+
+        private void Awake()
+        {
+            survivalAnimation.Init(this);
+        }
 
         private void Start()
         {
@@ -54,12 +63,22 @@ namespace Actor
                 if (move.x >= 1f || move.x <= -1f)
                     GetComponent<Rigidbody>().AddForce(move * 15f, ForceMode.VelocityChange);
                 previousDirection = move.x;
+
+                gameObject.layer = (int)Layer.PlayerDynamic;
+
+                return;
             }
+
+            gameObject.layer = (int)Layer.PlayerStatic;
         }
 
-        private void DisableBubble(bool disable, int index)
+        public void Dodge(Vector3 direction)
         {
-
+            if(IsBlocking)
+            {
+                if (direction.y <= -0.5)
+                    Debug.Log("Spot Dodge");
+            }
         }
 
         private void DisableAllBubbles(bool disable)
@@ -78,6 +97,11 @@ namespace Actor
                 shield.TakeDamage(damageAmount.damage);
             else
                 health.TakeDamage(damageAmount.damage);
+        }
+
+        public void PlaySurvivalAnimation()
+        {
+            survivalAnimation.PlayBlockAnim(IsBlocking);
         }
 
         private void OnDrawGizmos() { }

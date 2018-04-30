@@ -1,4 +1,5 @@
-﻿using Actor.Bubbles;
+﻿using Actor.Animations;
+using Actor.Bubbles;
 using Combos;
 using Controls;
 using System;
@@ -9,14 +10,21 @@ namespace Actor
 {
     public class ActorCombat : MonoBehaviour
     {
-        [SerializeField] private Attack[] attacks;
+        [SerializeField] private Attack[] attacks = null;
+        [SerializeField] private AttackAnim attackAnimation = new AttackAnim();
 
         private int attackId = 0;
         public int AttackIndex { get; private set; }
 
-        private void Start()
+        #region Initialization
+        private void Awake()
         {
             AttackIndex = 0;
+            attackAnimation.Init(this);
+        }
+
+        private void Start()
+        {
             InitializeAttacks();
 
             GetComponentInChildren<ComboManager>().comboBehaviour.ComboEvent += UpdateAttackId;
@@ -26,6 +34,7 @@ namespace Actor
         {
             GetComponentInChildren<ComboManager>().comboBehaviour.ComboEvent -= UpdateAttackId;
         }
+        #endregion
 
         private void InitializeAttacks()
         {
@@ -48,9 +57,14 @@ namespace Actor
 
                 if (AttackIndex > 0)
                 {
-                    ;
+                    GetComponent<Rigidbody>().AddForce(Vector3.right * 10f, ForceMode.VelocityChange);
                 }
             }
+        }
+
+        public void PlayAttackAnimation()
+        {
+            attackAnimation.PlayAttackAnim(AttackIndex);
         }
 
         private void UpdateAttackId(int attackId)

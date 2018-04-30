@@ -33,6 +33,7 @@ namespace Actor
         public bool IsCrouching { get { return movement.isCrouching; } private set { movement.isCrouching = value; } }
         public bool IsTurning { get { return movement.isTurning; } private set { movement.isTurning = value; } }
         public bool IsFastFalling { get { return jump.isFastFalling; } private set { jump.isFastFalling = value; } }
+        public bool IsFalling { get { return jump.isFalling; } private set { jump.isFalling = value; } }
 
         public Vector3 Velocity { get; private set; }
         public int JumpCount { get { return jump.jumpCounter; } private set { jump.jumpCounter = value; } }
@@ -43,6 +44,7 @@ namespace Actor
         private void Awake()
         {
             SetRigidbody();
+
             movementAnimation.Init(this);
 
             if (transform.parent.localEulerAngles.y > 90f)
@@ -112,6 +114,7 @@ namespace Actor
         //for how high the actor jumps.
         public void Jump(float direction, bool jumpCommand, bool holdCommand)
         {
+            IsFalling = jump.IsCrestReached(rigidbody.transform.position.y, onGround);
             float verticalSpeed = jump.VerticalVelocity(gravity.counter);
 
             if (onGround)
@@ -145,17 +148,22 @@ namespace Actor
             JumpCount++;
         }
 
-        public void PlayMovementAnimations(Vector3 move)
+        #region Movement Animations
+        public void PlayMovementAnimations(Vector3 direction)
         {
-            movementAnimation.PlayHorizontalAnim(move);
-            movementAnimation.PlayCrouchAnim(IsCrouching);
+            movementAnimation.PlayHorizontalAnim(direction);
             movementAnimation.PlayDashAnim(IsDashing);
+            movementAnimation.PlayTurnAnim(IsTurning);
         }
 
-        public void PlayJumpAnimations()
+        public void PlayJumpAnimations(Vector3 direction, bool jumpCommand)
         {
             movementAnimation.PlayLandAnim(onGround);
+            movementAnimation.PlayFallAnim(IsFalling);
+            movementAnimation.PlayJumpLeanAnim(direction);
+            movementAnimation.PlayJumpAnim(jumpCommand);
         }
+        #endregion
 
         public bool InverseOnGround() { return !onGround; }
 

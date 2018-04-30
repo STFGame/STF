@@ -19,15 +19,28 @@ namespace Actor
 
         public int jumpCounter = 0;
 
+        private float crestHeight = 0f;
         private float heightTimer = 0f;
 
         public bool isFastFalling = false;
+        public bool isFalling = false;
         public bool IsJumpsExceeded { get { return jumpCounter >= maxJumps; } }
 
         public float VerticalVelocity(float gravity)
         {
             float verticalSpeed = Mathf.Sqrt(2f * gravity * jumpHeight);
             return verticalSpeed;
+        }
+
+        public bool IsCrestReached(float currentHeight, bool onGround)
+        {
+            if(currentHeight >= crestHeight || onGround)
+            {
+                crestHeight = currentHeight;
+
+                return false;
+            }
+            return true;
         }
 
         public bool CanAscend(bool isAscending)

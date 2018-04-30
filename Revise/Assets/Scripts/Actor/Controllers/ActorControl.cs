@@ -5,8 +5,6 @@ using UnityEngine;
 
 namespace Actor
 {
-    //public enum ActorMovementState { Idle, Crouch, Turn, Regular, Dash, Descend }
-
     /// <summary>ActorControl controls the Actor by passing in different values to the movement component.</summary>
     [RequireComponent(typeof(ActorMovement), typeof(ActorCombat), typeof(ActorSurvival))]
     [RequireComponent(typeof(ActorAnimation))]
@@ -50,14 +48,18 @@ namespace Actor
 
         private void Update()
         {
+            if (device == null)
+                return;
+
             move = new Vector3(device.LeftStick.Horizontal, device.LeftStick.Vertical, 0f);
 
             device.UpdateDevice();
 
-            actorCombat.PerformAttack();
+            //actorCombat.PerformAttack();
 
             comboManager.PerformCombos(device);
 
+            Combat();
             Survival(move);
 
             ControlMovement();
@@ -65,6 +67,9 @@ namespace Actor
 
         private void FixedUpdate()
         {
+            if (device == null)
+                return;
+
             Move(move);
         }
 
@@ -75,11 +80,16 @@ namespace Actor
             actorSurvival.PerformSurvival(block);
 
             actorSurvival.Roll(move);
+
+            actorSurvival.Dodge(move);
+
+            actorSurvival.PlaySurvivalAnimation();
         }
 
         private void Combat()
         {
             actorCombat.PerformAttack();
+            actorCombat.PlayAttackAnimation();
         }
 
         #region Movement
@@ -97,7 +107,7 @@ namespace Actor
             actorMovement.Rotate(move.x, actorSurvival.IsBlocking);
 
             actorMovement.PlayMovementAnimations(move);
-            actorMovement.PlayJumpAnimations();
+            actorMovement.PlayJumpAnimations(move, jumpCommand);
 
             device.LeftBumper.Trigger = false;
         }

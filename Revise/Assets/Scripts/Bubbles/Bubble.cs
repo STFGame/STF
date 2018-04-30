@@ -18,16 +18,18 @@ namespace Actor.Bubbles
         public bool isEnabled = true;
         private bool isHit = false;
 
+        public delegate void IntersectChange(Collider other);
+        public event IntersectChange IntersectEvent;
+
         private void OnTriggerEnter(Collider other)
         {
             if (!isEnabled)
             {
-                isHit = false;
+                UpdateIntersect(false, null);
                 return;
             }
 
-            Debug.Log("Hit " + gameObject.name + " " + other.gameObject.layer);
-            isHit = true;
+            UpdateIntersect(true, other);
         }
 
         private void OnTriggerExit(Collider other)
@@ -35,8 +37,18 @@ namespace Actor.Bubbles
             if (!isEnabled)
                 return;
 
-            Debug.Log("Exit " + gameObject.name);
-            isHit = false;
+            UpdateIntersect(false, null);
+        }
+
+        private void UpdateIntersect(bool isHit, Collider other)
+        {
+            if (this.isHit == isHit)
+                return;
+
+            this.isHit = isHit;
+
+            if (IntersectEvent != null)
+                IntersectEvent(other);
         }
 
         private void OnDrawGizmos()

@@ -25,6 +25,8 @@ namespace Actor.Combat
         private GameObject hitBubbleGB = null;
         private Bubble hitBubble;
 
+        private Collider other = null;
+
         public void Initiate(GameObject hitBubbleGB)
         {
             this.hitBubbleGB = hitBubbleGB;
@@ -33,6 +35,8 @@ namespace Actor.Combat
                 hitBubble = hitBubbleGB.GetComponent<Bubble>();
 
             this.hitBubbleGB.SetActive(enable);
+
+            hitBubble.IntersectEvent += UpdateCollider;
         }
 
         public void EnableAttack(bool enable)
@@ -56,10 +60,15 @@ namespace Actor.Combat
 
             if (active)
             {
-                //if (hitBubble != null)
-                    //hitBubble.damage = damage;
+                if (hitBubble != null)
+                {
+                    if (other != null)
+                        other.GetComponent<ActorSurvival>().TakeDamage(damage);
+                }
             }
         }
+
+        private void UpdateCollider(Collider other) { Debug.Log(other.name); this.other = other; }
 
         private void EnableHitBubble(bool isEnabled)
         {
