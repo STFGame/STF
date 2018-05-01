@@ -24,7 +24,7 @@ namespace Actor
 
         private bool previousDisable = true;
 
-        private SurvivalAnim survivalAnimation = new SurvivalAnim();
+        private SurvivalAnimation survivalAnimation = new SurvivalAnimation();
 
         private void Awake()
         {

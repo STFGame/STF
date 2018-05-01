@@ -38,10 +38,10 @@ namespace Actor.Movements
             }
 
             if (useTimer)
-                if (absDirection > minimum && absDirection < maximum)
+                if (absDirection >= minimum && absDirection <= maximum)
                     timer += Time.deltaTime;
 
-            return (timer < threshold && absDirection > maximum);
+            return (timer <= threshold && absDirection >= maximum);
         }
     }
 }

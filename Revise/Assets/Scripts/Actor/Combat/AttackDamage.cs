@@ -10,13 +10,13 @@ namespace Actor.Combat
     public class AttackDamage
     {
         [SerializeField] public float damage;
-        [SerializeField] public float force;
+        [SerializeField] public float knockBack;
         [SerializeField][Range(0f, 2f)] public float stunLength;
 
-        public AttackDamage(float damage, float force, float stunLength)
+        public AttackDamage(float damage, float knockBack, float stunLength)
         {
             this.damage = damage;
-            this.force = force;
+            this.knockBack = knockBack;
             this.stunLength = stunLength;
 
             this.stunLength = Mathf.Clamp(stunLength, 0f, 2f);

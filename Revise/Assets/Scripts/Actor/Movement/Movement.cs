@@ -15,7 +15,6 @@ namespace Actor.Movements
 
         public bool isDashing;
         public bool isCrouching;
-        public bool isTurning;
 
         private MovementState currentState;
         private MovementState previousState;
@@ -24,7 +23,6 @@ namespace Actor.Movements
         {
             isDashing = false;
             isCrouching = false;
-            isTurning = false;
         }
 
         public Vector3 HorizontalVelocity(Vector3 direction, Vector3 currentVelocity)

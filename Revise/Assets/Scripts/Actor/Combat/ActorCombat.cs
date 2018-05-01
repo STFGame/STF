@@ -11,7 +11,7 @@ namespace Actor
     public class ActorCombat : MonoBehaviour
     {
         [SerializeField] private Attack[] attacks = null;
-        [SerializeField] private AttackAnim attackAnimation = new AttackAnim();
+        [SerializeField] private AttackAnimation attackAnimation = new AttackAnimation();
 
         private int attackId = 0;
         public int AttackIndex { get; private set; }

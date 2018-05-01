@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Actor.StateBehaviours;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,22 +8,22 @@ using UnityEngine;
 namespace Actor.Animations
 {
     [Serializable]
-    public class AttackAnimation : Animation
+    public class AttackAnimation
     {
-        [SerializeField]private string attackName = "AttackIndex";
+        [SerializeField] private string attackIndexName = "AttackIndex";
 
-        private int attack = 0;
+        private Animator animator;
+        private CombatBehaviour attackBehaviour;
 
-        public override void Init<T>(MonoBehaviour mono)
+        public void Init(ActorCombat actorCombat)
         {
-            animator = mono.GetComponent<Animator>();
+            animator = actorCombat.GetComponent<Animator>();
+            attackBehaviour = animator.GetBehaviour<CombatBehaviour>();
+
+            if (attackBehaviour != null)
+                attackBehaviour.actorCombat = actorCombat;
         }
 
-        public void PlayAttack(int attack)
-        {
-            this.attack = attack;
-
-            animator.SetInteger(attackName, attack);
-        }
+        public void PlayAttackAnim(int index) { animator.SetInteger(attackIndexName, index); }
     }
 }

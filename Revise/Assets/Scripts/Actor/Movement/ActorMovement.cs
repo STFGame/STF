@@ -19,11 +19,11 @@ namespace Actor
         [SerializeField] private Jump jump = new Jump();
         [SerializeField] private GroundCast groundCast = new GroundCast();
         [SerializeField] private Gravity gravity = new Gravity();
-        [SerializeField] private MoveAnim movementAnimation = new MoveAnim();
+        [SerializeField] private MovementAnimation movementAnimation = new MovementAnimation();
 
         private float rotation = 0f;
         private float rotationDirection = -180f;
-        private bool onGround = true;
+        public bool onGround = true;
 
         private new Rigidbody rigidbody;
 
@@ -31,9 +31,10 @@ namespace Actor
         public MovementState MovementState { get; private set; }
         public bool IsDashing { get { return movement.isDashing; } private set { movement.isDashing = value; } }
         public bool IsCrouching { get { return movement.isCrouching; } private set { movement.isCrouching = value; } }
-        public bool IsTurning { get { return movement.isTurning; } private set { movement.isTurning = value; } }
+        public bool IsTurning { get; private set; }
         public bool IsFastFalling { get { return jump.isFastFalling; } private set { jump.isFastFalling = value; } }
         public bool IsFalling { get { return jump.isFalling; } private set { jump.isFalling = value; } }
+        public bool IsJumping { get; private set; }
 
         public Vector3 Velocity { get; private set; }
         public int JumpCount { get { return jump.jumpCounter; } private set { jump.jumpCounter = value; } }
@@ -77,11 +78,11 @@ namespace Actor
         //Moves the actor in the direction that it is instructed by
         public void Move(Vector3 direction)
         {
-            if (!IsTurning)
-            {
-                Velocity = movement.HorizontalVelocity(direction, rigidbody.velocity);
-                rigidbody.AddForce(Velocity, forceMode);
-            }
+            if (IsTurning)
+                return;
+
+            Velocity = movement.HorizontalVelocity(direction, rigidbody.velocity);
+            rigidbody.AddForce(Velocity, forceMode);
         }
 
         //Rotates the actor to the instructed direction which can be with 0 or 180
@@ -90,7 +91,7 @@ namespace Actor
             Quaternion startRotation = transform.localRotation;
             Quaternion endRotation = Quaternion.Euler(0f, rotation, 0f);
 
-            if (!onGround || stopTurn)
+            if (!onGround || stopTurn || IsCrouching)
             {
                 endRotation = Quaternion.Euler(0, rotation, 0f);
 
@@ -107,14 +108,20 @@ namespace Actor
 
             rigidbody.transform.localRotation = Quaternion.RotateTowards(startRotation, endRotation, movement.RotationSpeed);
 
-            IsTurning = (transform.localEulerAngles.y != (-1) * rotation);
+            Debug.Log(transform.localEulerAngles.y != (-1) * rotation);
+
+            if (transform.localEulerAngles.y != (-1) * rotation)
+                IsTurning = true;
+            //IsTurning = (transform.localEulerAngles.y != (-1) * rotation);
         }
 
         //A method for jumping. The jump bool is for starting the jump and the height is 
         //for how high the actor jumps.
         public void Jump(float direction, bool jumpCommand, bool holdCommand)
         {
+            IsJumping = jumpCommand;
             IsFalling = jump.IsCrestReached(rigidbody.transform.position.y, onGround);
+
             float verticalSpeed = jump.VerticalVelocity(gravity.counter);
 
             if (onGround)
@@ -153,6 +160,7 @@ namespace Actor
         {
             movementAnimation.PlayHorizontalAnim(direction);
             movementAnimation.PlayDashAnim(IsDashing);
+            movementAnimation.PlayCrouchAnim(IsCrouching);
             movementAnimation.PlayTurnAnim(IsTurning);
         }
 

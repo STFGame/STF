@@ -29,6 +29,8 @@ namespace Actor.Bubbles
                 return;
             }
 
+            Debug.Log("Hit");
+
             UpdateIntersect(true, other);
         }
 

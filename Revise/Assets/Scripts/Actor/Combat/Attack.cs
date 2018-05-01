@@ -15,9 +15,9 @@ namespace Actor
         public AttackAnimation attackAnimation = AttackAnimation.LightAttack1;
 
         public AttackData[] attackData;
-        [SerializeField] private AttackDisplacement attackDisplace = new AttackDisplacement(0f, 0f, 0f);
+        [SerializeField] private AttackTravel attackDisplace = new AttackTravel(0f, 0f, 0f);
 
-        public AttackDisplacement Displace { get { return attackDisplace; } }
+        public AttackTravel Displace { get { return attackDisplace; } }
 
         private bool isEnabled = false;
 

@@ -19,8 +19,9 @@ namespace Actor.Combat
 
         [SerializeField] private bool masterEnable = false;
 
-        private bool enable = false;
         private float enableTimer = 0;
+        private bool enable = false;
+        private bool active = false;
 
         private GameObject hitBubbleGB = null;
         private Bubble hitBubble;
@@ -54,7 +55,7 @@ namespace Actor.Combat
                     return;
             }
 
-            bool active = ((enableTimer >= minRange && enableTimer <= maxRange) || masterEnable);
+            active = ((enableTimer >= minRange && enableTimer <= maxRange) || masterEnable);
 
             EnableHitBubble(active);
 
@@ -63,12 +64,22 @@ namespace Actor.Combat
                 if (hitBubble != null)
                 {
                     if (other != null)
-                        other.GetComponent<ActorSurvival>().TakeDamage(damage);
+                        other.GetComponentInParent<ActorSurvival>().TakeDamage(damage);
                 }
             }
         }
 
-        private void UpdateCollider(Collider other) { Debug.Log(other.name); this.other = other; }
+        private void UpdateCollider(Collider other)
+        {
+            if(other != null)
+                this.other = other;
+
+            if(!active)
+                this.other = null;
+
+            if (this.other != null)
+                Debug.Log(this.other.name);
+        }
 
         private void EnableHitBubble(bool isEnabled)
         {

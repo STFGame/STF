@@ -7,7 +7,6 @@ namespace Actor
 {
     /// <summary>ActorControl controls the Actor by passing in different values to the movement component.</summary>
     [RequireComponent(typeof(ActorMovement), typeof(ActorCombat), typeof(ActorSurvival))]
-    [RequireComponent(typeof(ActorAnimation))]
     public class ActorControl : MonoBehaviour
     {
         public PlayerNumber playerNumber;
@@ -15,7 +14,6 @@ namespace Actor
         private ActorMovement actorMovement;
         private ActorCombat actorCombat;
         private ActorSurvival actorSurvival;
-        private ActorAnimation actorAnimation;
         private ComboManager comboManager;
 
         [HideInInspector] public Device device = null;
@@ -34,7 +32,6 @@ namespace Actor
             actorMovement = GetComponent<ActorMovement>();
             actorCombat = GetComponent<ActorCombat>();
             actorSurvival = GetComponent<ActorSurvival>();
-            actorAnimation = GetComponent<ActorAnimation>();
             comboManager = GetComponentInChildren<ComboManager>();
 
             MovementState = MovementState.Regular;
@@ -54,8 +51,6 @@ namespace Actor
             move = new Vector3(device.LeftStick.Horizontal, device.LeftStick.Vertical, 0f);
 
             device.UpdateDevice();
-
-            //actorCombat.PerformAttack();
 
             comboManager.PerformCombos(device);
 
@@ -134,7 +129,7 @@ namespace Actor
             {
                 state = MovementState.Crouch;
             }
-            else if (descendControl.IsSuccessful(device.LeftStick.Vertical))
+            else if (descendControl.IsSuccessful(device.LeftStick.Vertical) && !actorMovement.onGround)
             {
                 state = MovementState.Descend;
             }

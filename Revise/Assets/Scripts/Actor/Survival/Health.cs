@@ -26,6 +26,7 @@ namespace Actor.Survivability
             {
                 currentHealth -= damageAmount;
                 currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+                Debug.Log(currentHealth);
             }
         }
     }
