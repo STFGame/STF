@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae224762eccde8c49b0b57020384054a, type: 3}
+  m_Name: MoveInfo
+  m_EditorClassIdentifier: 
+  forceMode: 2
+  slow:
+    speed: 20
+    rotationSpeed: 10
+    acceleration: 10
+    deceleration: 30
+  normal:
+    speed: 25
+    rotationSpeed: 15
+    acceleration: 8
+    deceleration: 25
+  fast:
+    speed: 40
+    rotationSpeed: 20
+    acceleration: 15
+    deceleration: 10

@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: ec67a8e4d22b4044a8e4aa24d44de5da
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: bicep_bone_L_001
+    100004: bicep_bone_R_001
+    100006: calf_bone_L_001
+    100008: calf_bone_R_001
+    100010: foot_bone_L_001
+    100012: foot_bone_R_001
+    100014: forearm_bone_L_001
+    100016: forearm_bone_R_001
+    100018: hand_bone_L_001
+    100020: hand_bone_R_001
+    100022: head_bone_001
+    100024: hip_bone_001
+    100026: hip_root_001
+    100028: index_finger_bone_L_001
+    100030: index_finger_bone_L_002
+    100032: index_finger_bone_L_003
+    100034: index_finger_bone_R_001
+    100036: index_finger_bone_R_002
+    100038: index_finger_bone_R_003
+    100040: middle_finger_bone_L_001
+    100042: middle_finger_bone_L_002
+    100044: middle_finger_bone_L_003
+    100046: middle_finger_bone_R_001
+    100048: middle_finger_bone_R_002
+    100050: middle_finger_bone_R_003
+    100052: neck_bone_001
+    100054: pinky_control_L_002
+    100056: pinky_control_L_003
+    100058: pinky_control_L_004
+    100060: pinky_control_R_002
+    100062: pinky_control_R_003
+    100064: pinky_control_R_004
+    100066: PM_mesh_torso
+    100068: //RootNode
+    100070: ring_finger_bone_L_001
+    100072: ring_finger_bone_L_002
+    100074: ring_finger_bone_L_003
+    100076: ring_finger_bone_R_001
+    100078: ring_finger_bone_R_002
+    100080: ring_finger_bone_R_003
+    100082: root_bone_001
+    100084: shoulder_bone_L_001
+    100086: shoulder_bone_R_001
+    100088: spine_bone_001
+    100090: spine_bone_002
+    100092: spine_bone_003
+    100094: thigh_bone_L_001
+    100096: thigh_bone_R_001
+    100098: thumb_bone_L_001
+    100100: thumb_bone_L_002
+    100102: thumb_bone_L_003
+    100104: thumb_bone_R_001
+    100106: thumb_bone_R_002
+    100108: thumb_bone_R_003
+    100110: toe_bone_L_001
+    100112: toe_bone_R_001
+    400000: Armature
+    400002: bicep_bone_L_001
+    400004: bicep_bone_R_001
+    400006: calf_bone_L_001
+    400008: calf_bone_R_001
+    400010: foot_bone_L_001
+    400012: foot_bone_R_001
+    400014: forearm_bone_L_001
+    400016: forearm_bone_R_001
+    400018: hand_bone_L_001
+    400020: hand_bone_R_001
+    400022: head_bone_001
+    400024: hip_bone_001
+    400026: hip_root_001
+    400028: index_finger_bone_L_001
+    400030: index_finger_bone_L_002
+    400032: index_finger_bone_L_003
+    400034: index_finger_bone_R_001
+    400036: index_finger_bone_R_002
+    400038: index_finger_bone_R_003
+    400040: middle_finger_bone_L_001
+    400042: middle_finger_bone_L_002
+    400044: middle_finger_bone_L_003
+    400046: middle_finger_bone_R_001
+    400048: middle_finger_bone_R_002
+    400050: middle_finger_bone_R_003
+    400052: neck_bone_001
+    400054: pinky_control_L_002
+    400056: pinky_control_L_003
+    400058: pinky_control_L_004
+    400060: pinky_control_R_002
+    400062: pinky_control_R_003
+    400064: pinky_control_R_004
+    400066: PM_mesh_torso
+    400068: //RootNode
+    400070: ring_finger_bone_L_001
+    400072: ring_finger_bone_L_002
+    400074: ring_finger_bone_L_003
+    400076: ring_finger_bone_R_001
+    400078: ring_finger_bone_R_002
+    400080: ring_finger_bone_R_003
+    400082: root_bone_001
+    400084: shoulder_bone_L_001
+    400086: shoulder_bone_R_001
+    400088: spine_bone_001
+    400090: spine_bone_002
+    400092: spine_bone_003
+    400094: thigh_bone_L_001
+    400096: thigh_bone_R_001
+    400098: thumb_bone_L_001
+    400100: thumb_bone_L_002
+    400102: thumb_bone_L_003
+    400104: thumb_bone_R_001
+    400106: thumb_bone_R_002
+    400108: thumb_bone_R_003
+    400110: toe_bone_L_001
+    400112: toe_bone_R_001
+    2100000: lambert2
+    2100002: initialShadingGroup1
+    4300000: PM_mesh_torso
+    7400000: Default Take
+    7400002: AttackOne
+    7400004: AttackTwo
+    7400006: AttackUp
+    7400008: Dash
+    7400010: Idle
+    7400012: JumpDouble
+    7400014: JumpFall
+    7400016: JumpLand
+    7400018: JumpLoop
+    7400020: JumpLoopLeanBack
+    7400022: JumpLoopLeanForward
+    7400024: JumpStart
+    7400026: Run
+    7400028: Sneak
+    7400030: T-Pose
+    7400032: Walk
+    9500000: //RootNode
+    13700000: PM_mesh_torso
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
