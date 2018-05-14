@@ -59,70 +59,77 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Actions\Act.cs" />
+    <Compile Include="Assets\Scripts\Actions\ActionHold.cs" />
+    <Compile Include="Assets\Scripts\Actions\ActionInput.cs" />
+    <Compile Include="Assets\Scripts\Actions\ActionItem.cs" />
+    <Compile Include="Assets\Scripts\Actions\ActionRange.cs" />
+    <Compile Include="Assets\Scripts\Actions\ActionTracker.cs" />
+    <Compile Include="Assets\Scripts\Actions\CharacterAction.cs" />
     <Compile Include="Assets\Scripts\Association\Layer.cs" />
-    <Compile Include="Assets\Scripts\Association\STFScene.cs" />
+    <Compile Include="Assets\Scripts\Association\SceneChoice.cs" />
     <Compile Include="Assets\Scripts\Association\Tag.cs" />
     <Compile Include="Assets\Scripts\Behaviours\AttackBehaviour.cs" />
     <Compile Include="Assets\Scripts\Boxes\Box.cs" />
     <Compile Include="Assets\Scripts\Boxes\BoxArea.cs" />
     <Compile Include="Assets\Scripts\Boxes\BoxType.cs" />
     <Compile Include="Assets\Scripts\Boxes\ColliderType.cs" />
+    <Compile Include="Assets\Scripts\Boxes\Groundbox.cs" />
     <Compile Include="Assets\Scripts\Boxes\Hitbox.cs" />
     <Compile Include="Assets\Scripts\Boxes\Hurtbox.cs" />
     <Compile Include="Assets\Scripts\Character\Combat\Attack.cs" />
-    <Compile Include="Assets\Scripts\Character\Combat\AttackInfo.cs" />
+    <Compile Include="Assets\Scripts\Character\Combat\AttackAction.cs" />
+    <Compile Include="Assets\Scripts\Character\Combat\AttackEvent.cs" />
+    <Compile Include="Assets\Scripts\Character\Combat\AttackType.cs" />
     <Compile Include="Assets\Scripts\Character\Combat\AttackZone.cs" />
     <Compile Include="Assets\Scripts\Character\Combat\CharacterAttack.cs" />
+    <Compile Include="Assets\Scripts\Character\Combat\Damage.cs" />
+    <Compile Include="Assets\Scripts\Character\Combat\IAttack.cs" />
     <Compile Include="Assets\Scripts\Character\Controllers\CharacterController.cs" />
-    <Compile Include="Assets\Scripts\Character\Controllers\PlayerNumber.cs" />
     <Compile Include="Assets\Scripts\Character\Evasion\CharacterEvasion.cs" />
-    <Compile Include="Assets\Scripts\Character\Info\CharacterInfo.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\CharacterJump.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\CharacterMove.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\JumpInfo.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\MoveInfo.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\MoveMode.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\Speed.cs" />
+    <Compile Include="Assets\Scripts\Character\Movement\MoveSpeed.cs" />
     <Compile Include="Assets\Scripts\Character\Survival\CharacterHealth.cs" />
     <Compile Include="Assets\Scripts\Character\Survival\CharacterShield.cs" />
+    <Compile Include="Assets\Scripts\Character\Survival\Health Display\HealthDisplay.cs" />
+    <Compile Include="Assets\Scripts\Character\Survival\Health Display\HealthRegular.cs" />
+    <Compile Include="Assets\Scripts\Character\Survival\Health Display\LifeTokenDisplay.cs" />
+    <Compile Include="Assets\Scripts\Character\Survival\Health Display\LifeTokenRegular.cs" />
+    <Compile Include="Assets\Scripts\Character\Survival\IDamagable.cs" />
     <Compile Include="Assets\Scripts\Character\Survival\IHealth.cs" />
     <Compile Include="Assets\Scripts\Control\Button\Button.cs" />
-    <Compile Include="Assets\Scripts\Control\Button\ButtonInput.cs" />
-    <Compile Include="Assets\Scripts\Control\Button\ButtonQuery.cs" />
-    <Compile Include="Assets\Scripts\Control\Button\ControlIdentity.cs" />
-    <Compile Include="Assets\Scripts\Control\Button\IControlQuery.cs" />
     <Compile Include="Assets\Scripts\Control\Device.cs" />
-    <Compile Include="Assets\Scripts\Control\Joystick\Joystick.cs" />
-    <Compile Include="Assets\Scripts\Control\Joystick\JoystickQuery.cs" />
+    <Compile Include="Assets\Scripts\Control\Joystick\Axis.cs" />
+    <Compile Include="Assets\Scripts\Control\PlayerNumber.cs" />
     <Compile Include="Assets\Scripts\Control\Profiles\DeviceProfile.cs" />
-    <Compile Include="Assets\Scripts\Control\Profiles\PlayStation4Profile.cs" />
-    <Compile Include="Assets\Scripts\Control\Profiles\ProfileNameList.cs" />
-    <Compile Include="Assets\Scripts\Control\Profiles\Xbox360Profile.cs" />
-    <Compile Include="Assets\Scripts\CubeAttack.cs" />
-    <Compile Include="Assets\Scripts\Input\InputAction.cs" />
-    <Compile Include="Assets\Scripts\Input\InputMove.cs" />
-    <Compile Include="Assets\Scripts\Input\InputRange.cs" />
-    <Compile Include="Assets\Scripts\Input\InputRegistration.cs" />
-    <Compile Include="Assets\Scripts\Input\InputTracker.cs" />
-    <Compile Include="Assets\Scripts\Input\Tet.cs" />
+    <Compile Include="Assets\Scripts\Control\Profiles\ProfileName.cs" />
+    <Compile Include="Assets\Scripts\Cube Testors\CubeAttack.cs" />
+    <Compile Include="Assets\Scripts\Cube Testors\CubeHealth.cs" />
+    <Compile Include="Assets\Scripts\Game\BoundsDetection.cs" />
+    <Compile Include="Assets\Scripts\Game\GameSettings.cs" />
+    <Compile Include="Assets\Scripts\Game\Gravity.cs" />
     <Compile Include="Assets\Scripts\Managers\BoxManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Misc\BoundsDetection.cs" />
-    <Compile Include="Assets\Scripts\Misc\Gravity.cs" />
-    <Compile Include="Assets\Scripts\Misc\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\UI\CharacterBox.cs" />
-    <Compile Include="Assets\Scripts\UI\Cursor.cs" />
+    <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\Misc\IGroundable.cs" />
+    <Compile Include="Assets\Scripts\Misc\ISpawnable.cs" />
     <Compile Include="Assets\Scripts\UI\IUIComponent.cs" />
-    <Compile Include="Assets\Scripts\UI\SceneChange.cs" />
     <Compile Include="Assets\Scripts\UI\UIButton.cs" />
+    <Compile Include="Assets\Scripts\UI\UICursor.cs" />
+    <Compile Include="Assets\Scripts\UI\UICursorManager.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UIScene.cs" />
+    <Compile Include="Assets\Scripts\UI\UISelectionWindow.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/PROTOTYPES/Unity Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/Unity Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/PROTOTYPES/Unity Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/Unity Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files/Unity 2018.1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

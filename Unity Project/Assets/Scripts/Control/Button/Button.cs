@@ -11,43 +11,37 @@ namespace Controls
         public bool Press { get; private set; }
         public bool Release { get; private set; }
         public bool Hold { get; private set; }
-
-        /// <summary>
-        /// Trigger is used to combat loss of input in FixedUpdate. </para>
-        /// Trigger must be manually set to false after calling it, otherwise it will always be true.
-        /// </summary>
-        public bool Trigger { get; set; } 
+        public bool Trigger { get; set; }
 
         public int KeyID { get; private set; }
 
-        private string query;
+        private string inputName;
 
-        public Button(string query)
+        public Button(string inputName, int playerNumber, int keyID)
         {
-            this.query = query;
-            KeyID = 0;
+            char[] split = new char[] { ' ' };
+
+            string[] temp = inputName.Split(split);
+            if (temp.Length > 3)
+            {
+                temp[1] = playerNumber.ToString();
+
+                inputName = "";
+                for (int i = 0; i < temp.Length; i++)
+                    inputName += temp[i] + " ";
+                inputName = inputName.TrimEnd();
+            }
+            this.inputName = inputName;
+
+            KeyID = keyID;
         }
 
         public void UpdateButton()
         {
-            Press = Input.GetKeyDown(query);
-            Hold = Input.GetKey(query);
-            Release = Input.GetKeyUp(query);
+            Press = Input.GetKeyDown(inputName);
+            Hold = Input.GetKey(inputName);
+            Release = Input.GetKeyUp(inputName);
             Trigger = Trigger || Press;
-
-            SetKey();
-        }
-
-        private void SetKey()
-        {
-            if (Press)
-                KeyID = 1;
-            else if (Hold)
-                KeyID = 2;
-            else if (Release)
-                KeyID = 3;
-            else
-                KeyID = 0;
         }
     }
 }

@@ -1,28 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Controls
 {
     [Serializable]
     public class Device
     {
-        private Joystick joystick;
-        private Button[] buttons;
-        private DeviceProfile deviceProfile;
+        private Button[] buttons = null;
+        private Axis[] axes = null;
 
-        public readonly int maxButtons = 10;
+        private DeviceProfile deviceProfile = null;
+
+        public int NumberOfButtons { get; private set; }
+
+        public int NumberOfAxes { get; private set; }
 
         public Device(string name, int controlNumber)
         {
             deviceProfile = new DeviceProfile(name);
-            buttons = new Button[maxButtons];
 
+            NumberOfButtons = deviceProfile.ButtonCount;
+            NumberOfAxes = deviceProfile.AxisCount;
+
+            buttons = new Button[deviceProfile.ButtonCount];
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i] = new Button(deviceProfile.GetProfile(controlNumber).Query(i));
+                buttons[i] = new Button(deviceProfile.GetMap(i), controlNumber, i);
 
-            joystick = new Joystick(controlNumber);
+            axes = new Axis[deviceProfile.AxisCount];
+            for (int i = 0; i < axes.Length; i++)
+                axes[i] = new Axis(deviceProfile.GetMap(i + DeviceProfile.AXIS_MULTIPLIER), controlNumber, i);
         }
 
         public void UpdateDevice()
@@ -30,34 +35,57 @@ namespace Controls
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].UpdateButton();
 
-            joystick.UpdateJoystick();
+            for (int i = 0; i < axes.Length; i++)
+                axes[i].UpdateAxis();
         }
 
-        public Button GetButton(ButtonInput input) { return buttons[(int)input]; }
+        #region Buttons and Axes Control
+        public Button GetButton(int buttonNumber) { return buttons[buttonNumber]; }
 
-        public Button GetButton(int input) { return buttons[input]; }
+        public Button Action1 { get { return buttons[deviceProfile.Action1]; } }
 
-        public Button Action1 { get { return buttons[(int)ButtonInput.Action1]; } }
+        public Button Action2 { get { return buttons[deviceProfile.Action2]; } }
 
-        public Button Action2 { get { return buttons[(int)ButtonInput.Action2]; } }
+        public Button Action3 { get { return buttons[deviceProfile.Action3]; } }
 
-        public Button Action3 { get { return buttons[(int)ButtonInput.Action3]; } }
+        public Button Action4 { get { return buttons[deviceProfile.Action4]; } }
 
-        public Button Action4 { get { return buttons[(int)ButtonInput.Action4]; } }
+        public Button L1 { get { return buttons[deviceProfile.L1]; } }
 
-        public Button LeftTrigger { get { return buttons[(int)ButtonInput.LeftTrigger]; } }
+        public Button R1 { get { return buttons[deviceProfile.R1]; } }
 
-        public Button RightTrigger { get { return buttons[(int)ButtonInput.RightTrigger]; } }
+        public Button L2A { get { return buttons[deviceProfile.L2A]; } }
 
-        public Button LeftBumper { get { return buttons[(int)ButtonInput.LeftBumper]; } }
+        public Button R2A { get { return buttons[deviceProfile.R2A]; } }
 
-        public Button RightBumper { get { return buttons[(int)ButtonInput.RightBumper]; } }
+        public Button Select { get { return buttons[deviceProfile.Select]; } }
 
-        public Button LeftStickPress { get { return buttons[(int)ButtonInput.LeftStick]; } }
+        public Button Start { get { return buttons[deviceProfile.Start]; } }
 
-        public Button RightStickPress { get { return buttons[(int)ButtonInput.RightStick]; } }
+        public Button LeftStick { get { return buttons[deviceProfile.LeftStick]; } }
 
-        public Joystick LeftStick { get { return joystick; } }
+        public Button RightStick { get { return buttons[deviceProfile.RightStick]; } }
+
+        public Button CenterButton { get { return buttons[deviceProfile.CenterButton]; } }
+
+        public Button TouchPad { get { return buttons[deviceProfile.TouchPad]; } }
+
+        public Axis LeftHorizontal { get { return axes[deviceProfile.LeftH]; } }
+
+        public Axis LeftVertical { get { return axes[deviceProfile.LeftV]; } }
+
+        public Axis RightHorizontal { get { return axes[deviceProfile.RightH]; } }
+
+        public Axis RightVertical { get { return axes[deviceProfile.RightV]; } }
+
+        public Axis L2B { get { return axes[deviceProfile.L2B]; } }
+
+        public Axis R2B { get { return axes[deviceProfile.R2B]; } }
+
+        public Axis DPadH { get { return axes[deviceProfile.DPadH]; } }
+
+        public Axis DPadV { get { return axes[deviceProfile.DPadV]; } }
+        #endregion
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Survival;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,10 @@ using UnityEngine;
 
 namespace Character
 {
-    public class CharacterShield : MonoBehaviour, IHealth
+    public class CharacterShield : MonoBehaviour, IDamagable
     {
+        public Transform shieldVisual = null;
+
         [SerializeField] private float maxShield = 100f;
         [SerializeField] private float hitDamping = 10f;
         [SerializeField] [Range(0f, 2f)] private float increaseRate = 1f;
@@ -30,6 +33,9 @@ namespace Character
 
         public void TakeDamage(float damage)
         {
+            if (!Shielding)
+                return;
+
             currentShield -= damage;
         }
 
@@ -37,9 +43,6 @@ namespace Character
         public void Shield(bool shield)
         {
             Shielding = (!ShieldStun) ? shield : false;
-
-            if (Shielding)
-                Debug.Log(Shielding);
 
             if (Shielding)
                 StartCoroutine(ShieldAction());
@@ -78,9 +81,14 @@ namespace Character
                 {
                     currentShield += Time.deltaTime * increaseRate;
 
+                    if (Shielding)
+                        break;
+
                     yield return null;
                 }
             }
+
+            currentShield = Mathf.Clamp(currentShield, 0f, maxShield);
         }
         #endregion
 

@@ -4,19 +4,43 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-[Serializable]
-public class Attack
+namespace Combat
 {
-    public AttackInfo[] attackInfos = null;
-
-    public void CheckAttack(int attackID)
+    /// <summary>
+    /// Class for the different attacks that the character can perform. 
+    /// </summary>
+    [Serializable]
+    public class Attack
     {
-        //if (attackID == 0)
-            //return;
+        #region Attack Variables
+        [SerializeField] private AttackAction[] attackActions = null;
 
-        for (int i = 0; i < attackInfos.Length; i++)
+        private int previousAttackID = 0;
+        #endregion
+
+        #region Updates
+        public void CheckAttack(int attackID)
         {
-            attackInfos[i].EnableAttack(attackID == attackInfos[i].AttackID);
+            if (attackID == previousAttackID)
+                return;
+
+            previousAttackID = attackID;
+
+            int index = 0;
+            for (int i = 0; i < attackActions.Length; i++)
+            {
+                if(attackActions[i].AttackID == attackID)
+                {
+                    index = i;
+                    break;
+                }
+            }
         }
+
+        private void StartAttack()
+        {
+
+        }
+        #endregion
     }
 }

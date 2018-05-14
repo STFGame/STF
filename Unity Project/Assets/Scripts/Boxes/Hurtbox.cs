@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Character;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,34 +7,51 @@ using UnityEngine;
 
 namespace Boxes
 {
+    /// <summary>
+    /// Class that is responsible for areas where the character can be hit.
+    /// </summary>
     public class Hurtbox : Box
     {
-        public delegate void Hurt(int hitId);
-        public event Hurt HurtEvent;
+        private CharacterHealth characterHealth = null;
 
-        private bool hurt = false;
-        private int hitId = 0;
+        private int hurtIndex = 0;
 
+        #region Load
+        private void Awake()
+        {
+            foreach (CharacterHealth health in GetComponentsInParent<CharacterHealth>())
+                if(health)
+                {
+                    characterHealth = health;
+                    break;
+                }
+
+            if (boxArea == BoxArea.MidTorso)
+                hurtIndex = 2;
+            else
+                hurtIndex = 1;
+        }
+        #endregion
+
+        #region Triggers
         private void OnTriggerEnter(Collider other)
         {
-            HurtUpdate((int)boxArea, true);
+            characterHealth.isHurt = true;
+            characterHealth.hurtID = hurtIndex;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            HurtUpdate(0, false);
+            //characterHealth.isHurt = false;
+            characterHealth.hurtID = 0;
         }
+        #endregion
 
-        private void HurtUpdate(int hitId, bool hurt)
+        #region Enable
+        public void Enabled(bool enabled)
         {
-            if (this.hurt == hurt || this.hitId == hitId)
-                return;
-
-            this.hurt = hurt;
-            this.hitId = hitId;
-
-            if (HurtEvent != null)
-                HurtEvent(hitId);
+            gameObject.layer = (enabled) ? (int)Layer.Hurtbox : (int)Layer.Dead;
         }
+        #endregion
     }
 }

@@ -1,74 +1,76 @@
-﻿using System.Collections;
+﻿using Actions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Character
 {
+    public enum EvasionMode { None, Dodge, RollForward, RollBackward }
+
     public class CharacterEvasion : MonoBehaviour
     {
+        #region CharacterEvasion Variables
         [SerializeField] private float rollSpeed;
 
         [Tooltip("How long the roll lasts (and all effects of roll)")]
-        [SerializeField] private float rollLength = 2f;
-        [SerializeField] private float dodgeLength = 2f;
+        [SerializeField] private Act dodgeAction = null;
+        [SerializeField] private Act rollAction = null;
 
+        CharacterMove characterMove = null;
         private new Rigidbody rigidbody;
-        private CharacterMove characterMove;
         private Animator animator;
 
-        public bool Rolling { get; private set; }
-        public bool Dodging { get; private set; }
+        private bool rolling = false;
+        private bool dodging = false;
 
+        public bool Rolling { get { return rolling; } }
+        public bool Dodging { get { return dodging; } }
+        #endregion
+
+        #region Load
         // Use this for initialization
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody>();
             characterMove = GetComponent<CharacterMove>();
+            rigidbody = GetComponent<Rigidbody>();
             animator = GetComponent<Animator>();
+        }
+        #endregion
 
-            Rolling = false;
-            Dodging = false;
+        #region Updates
+        public void Evade(EvasionMode evasionMode, float direction)
+        {
+            Roll(evasionMode, direction);
+
+            Dodge(evasionMode);
         }
 
-        public void Roll(bool roll, float direction)
+        public void Roll(EvasionMode evasionMode, float direction)
         {
-            if (roll)
-                StartCoroutine(RollAction(direction));
-        }
+            if (evasionMode == EvasionMode.RollForward || evasionMode == EvasionMode.RollBackward)
+                rolling = true;
 
-        private IEnumerator RollAction(float direction)
-        {
-            while(true)
+            if (rolling)
             {
-                Rolling = true;
-                Debug.Log("Entered roll");
-                yield return new WaitForSeconds(rollLength);
-                Debug.Log("Exited roll");
-                Rolling = false;
-                yield break;
+                rollAction.Perform(ref rolling);
             }
         }
 
-        public void Dodge(bool dodge)
+        public void Dodge(EvasionMode evasionMode)
         {
-            if (dodge)
-                StartCoroutine(DodgeAction());
-        }
+            if (evasionMode == EvasionMode.Dodge)
+                dodging = true;
 
-        private IEnumerator DodgeAction()
-        {
-            while(true)
-            {
-                Dodging = true;
-                yield return new WaitForSeconds(dodgeLength);
-                Dodging = false;
-                yield break;
-            }
+            if (dodging)
+                dodgeAction.Perform(ref dodging);
         }
+        #endregion
 
-        public void AnimateEvasion()
+        #region Visual FX and Animation
+        public void AnimateEvasion(int evasionIndex)
         {
-            animator.SetInteger("Roll", 1);
+            animator.SetInteger("EvasionIndex", evasionIndex);
         }
+        #endregion
     }
 }

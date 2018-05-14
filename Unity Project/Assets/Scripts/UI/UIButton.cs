@@ -9,38 +9,79 @@ using UnityEngine.SceneManagement;
 
 namespace UI
 {
+    /// <summary>
+    /// Class that contains info for the buttons that are in the UI
+    /// </summary>
     public class UIButton : MonoBehaviour, IUIComponent
     {
-        [SerializeField] private STFScene scene;
+        #region UIButton Variables
+        //An event that notifies object that it is being hovered
+        public delegate void HoverChange(bool hovering);
+        public event HoverChange HoverEvent;
 
-        SceneChange sceneChange;
+        //An event that notifies objects that it has been pressed
+        public delegate void PressChange(bool pressed);
+        public event PressChange PressEvent;
 
+        private bool press = false;
+        private bool hover = false;
+
+        private Animator buttonAnimator = null;
+        #endregion
+
+        #region Load
         private void Awake()
         {
-            sceneChange = GetComponent<SceneChange>();
+            buttonAnimator = GetComponent<Animator>();
         }
+        #endregion
 
-        public void Action(bool action)
+        #region Event Methods
+        public void Press(bool press, PlayerNumber playerNumber)
         {
-            if (!action)
-                return;
-
-            if (scene != STFScene.Quit)
-                StartCoroutine(SceneTransition());
-
-            Debug.Log("Pressed me!");
+            PressUpdate(press);
+            AnimatePress();
         }
 
         public void Hover(bool hover)
         {
-            Debug.Log("Hovering me!");
+            HoverUpdate(hover);
+            AnimateHover();
         }
 
-        private IEnumerator SceneTransition()
+        private void PressUpdate(bool press)
         {
-            float fadeTime = sceneChange.BeginFade(1);
-            yield return new WaitForSeconds(fadeTime);
-            SceneManager.LoadScene((int)scene);
+            if (press == this.press)
+                return;
+
+            this.press = press;
+
+            if (PressEvent != null)
+                PressEvent(this.press);
         }
+
+        private void HoverUpdate(bool hover)
+        {
+            if (this.hover == hover)
+                return;
+
+            this.hover = hover;
+
+            if (HoverEvent != null)
+                HoverEvent(this.hover);
+        }
+        #endregion
+
+        #region Visual FX and Animations
+        private void AnimateHover()
+        {
+            buttonAnimator.SetBool("Hover", hover);
+        }
+
+        private void AnimatePress()
+        {
+            buttonAnimator.SetBool("Press", press);
+        }
+        #endregion
     }
 }

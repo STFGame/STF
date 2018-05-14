@@ -1,41 +1,64 @@
 ﻿using Boxes;
+using Survival;
 using Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
+using Misc;
+using Actions;
 
 namespace Character
 {
     /// <summary>
     /// Health MonoBehaviour that controls how much health the character has
     /// </summary>
-    public class CharacterHealth : MonoBehaviour, IHealth
+    public class CharacterHealth : MonoBehaviour, IHealth, IDamagable
     {
-        [SerializeField] private GameObject healthMain = null;
-        [SerializeField] private GameObject healthSecondary = null;
+        #region Health Variables
+        [Header("Visual Health Values")]
+        [SerializeField] private HealthRegular healthRegular = null;
 
-        [SerializeField] private float maxHealth = 100f;
-        [SerializeField] [Range(0f, 1f)] private float freezeStart = 0.2f;
-        [SerializeField] [Range(0f, 1f)] private float freezeLength = 1f;
-        [SerializeField] [Range(0f, 1f)] private float hurtImmunity = 1f;
+        [SerializeField] private LifeTokenDisplay[] lifeTokenDisplay = null;
 
-        private float currentHealth;
+        [Header("Main Health Values")]
+        [SerializeField] [Range(0f, 1000f)] private float maxHealth = 100f;
+        [SerializeField] [Range(1, 5)] private int lives = 3;
 
-        private List<Hurtbox> hurtboxes = null;
+        [Header("Freeze Value")]
+        [SerializeField] private Act freezeAct = null;
+        [SerializeField] private Act immunity = null;
 
+        //Used to prevent character from taking damage while shielding-
         private CharacterShield characterShield = null;
+
         private new Rigidbody rigidbody;
         private Animator animator;
 
-        private float animSpeed = 0f;
+        private List<Hurtbox> hurtboxes = null;
 
-        public bool Hurt { get; private set; }
-        public bool Dead { get; private set; }
+        //The current health of the character
+        private float currentHealth = 0f;
 
-        #region Initialization
+        //The previous health of the character converted into a percentage
+        private float previousHealth = 0f;
+
+        //Used by the Hurtboxes on the character so as to inform the character when
+        //he/she is hit.
+        [HideInInspector] public bool isHurt = false;
+        [HideInInspector] public int hurtID = 0;
+
+        //Properties that can be used by other classes
+        public bool Immune { get; private set; }
+        public int Lives { get { return lives; } }
+        public bool Dead { get; set; }
+
+        public float MaxHealth { get { return maxHealth; } }
+        public float CurrentHealth { get { return currentHealth; } set { currentHealth = value; } }
+        #endregion
+
+        #region Load
+        //Starts at the highest prority.
         private void Awake()
         {
             characterShield = GetComponent<CharacterShield>();
@@ -43,121 +66,138 @@ namespace Character
             animator = GetComponent<Animator>();
 
             currentHealth = maxHealth;
+            previousHealth = maxHealth;
         }
 
         private void Start()
         {
+            LoadHurtboxes();
+        }
+
+        //Stores all of the available Hurtboxes into a list to make them
+        //easier to access inside the class.
+        private void LoadHurtboxes()
+        {
             hurtboxes = new List<Hurtbox>();
 
             var boxAreas = Enum.GetValues(typeof(BoxArea));
-
-            int index = 0;
             foreach (BoxArea boxArea in boxAreas)
             {
                 Hurtbox hurtbox = (Hurtbox)GetComponent<BoxManager>().GetBox(BoxType.Hurtbox, boxArea);
-                if (hurtbox != null)
-                {
+                if (hurtbox)
                     hurtboxes.Add(hurtbox);
-                    hurtboxes[index++].HurtEvent += UpdateHitIndex;
-                }
             }
-
-            for (int i = 0; i < hurtboxes.Count; i++)
-                print(hurtboxes[i]);
         }
 
-        private void OnDisable()
+        //Loads the visuals of the health component and sets it the child of 
+        //the specified parent.
+        public void LoadHealth(Transform parent)
         {
-            for (int i = 0; i < hurtboxes.Count; i++)
-                hurtboxes[i].HurtEvent -= UpdateHitIndex;
+            if (healthRegular != null)
+                healthRegular.Load(parent);
+        }
+
+        public void LoadLifeTokens(Transform[] parents)
+        {
+            for (int i = 0; i < parents.Length; i++)
+                lifeTokenDisplay[i].Load(parents[i]);
         }
         #endregion
 
-        #region Hurt Methods
-        private void UpdateHitIndex(int index)
+        #region Updates
+        //Update function of Health
+        public void UpdateHealth()
         {
-            animator.SetInteger("Hit", index);
-
-            if (index > 0)
+            if (Dead)
             {
-                StartCoroutine(HitFreeze());
-                StartCoroutine(ImmunityPhase());
+                gameObject.layer = (int)Layer.Dead;
+                healthRegular.DecreaseHealth(0, ref previousHealth, maxHealth);
+                return;
             }
-        }
 
-        private IEnumerator HitFreeze()
-        {
-            yield return new WaitForSeconds(freezeStart);
+            CharacterHurt();
 
-            animSpeed = animator.speed;
-            animator.speed = 0f;
+            if (healthRegular != null)
+                healthRegular.DecreaseHealth(currentHealth, ref previousHealth, maxHealth);
 
-            yield return new WaitForSeconds(freezeLength);
-
-            animator.speed = animSpeed;
-        }
-
-        private IEnumerator ImmunityPhase()
-        {
-            Hurt = true;
-
-            for (int i = 0; i < hurtboxes.Count; i++)
-                hurtboxes[i].gameObject.layer = (int)Layer.PlayerDynamic;
-
-            yield return new WaitForSeconds(hurtImmunity);
-
-            for (int i = 0; i < hurtboxes.Count; i++)
-                hurtboxes[i].gameObject.layer = (int)Layer.Hurtbox;
-
-            Hurt = false;
+            animator.SetInteger("Hit", hurtID);
         }
         #endregion
 
-        #region Taking Damage
+        #region Hurt Effects
+        //Entrance method for getting hit. Starts the coroutines for HitFreeze and also
+        //starts the ImmunityPhase where the character cannot be hurt.
+        private void CharacterHurt()
+        {
+            if (characterShield)
+                if (characterShield.Shielding)
+                    return;
+
+            if (isHurt)
+                HurtFreeze();
+
+            if (Immune)
+                Immunity();
+        }
+
+        private void HurtFreeze()
+        {
+            float animSpeed = animator.speed;
+            freezeAct.Perform(ref animSpeed, ref isHurt);
+            animator.speed = animSpeed;
+
+            Immune = true;
+        }
+
+        private void Immunity()
+        {
+            bool immune = true;
+            immunity.Perform(ref immune);
+
+            for (int i = 0; i < hurtboxes.Count; i++)
+                hurtboxes[i].Enabled(!immune);
+
+            Immune = immune;
+        }
+        #endregion
+
+        #region Damage
+        //Method is called whenever the character is supposed to take damage
         public void TakeDamage(float damage)
         {
-            if (characterShield != null)
-            {
+            if (characterShield)
                 if (characterShield.Shielding)
-                {
-                    characterShield.TakeDamage(damage);
                     return;
-                }
 
-                if (currentHealth <= 0)
-                {
-                    Dead = true;
-                    return;
-                }
+            previousHealth = (currentHealth / MaxHealth);
+            currentHealth -= damage;
 
-                currentHealth -= damage;
-
-                healthMain.transform.localScale = new Vector3(currentHealth / maxHealth, healthMain.transform.localScale.y, healthMain.transform.localScale.z);
-
-                StartCoroutine(DamageEffect(currentHealth));
-            }
-        }
-
-        private IEnumerator DamageEffect(float currentHealth)
-        {
-            float healthVelocity = 0f;
-
-            while (healthSecondary.transform.localScale.x != healthMain.transform.localScale.x)
-            {
-                float healthSecondaryX = healthSecondary.transform.localScale.x;
-                float healthMainX = healthMain.transform.localScale.x;
-
-                float smoothTime = Mathf.SmoothDamp(healthSecondaryX, healthMainX, ref healthVelocity, 0.5f);
-
-                healthSecondary.transform.localScale = new Vector3(smoothTime, healthSecondary.transform.localScale.y, healthSecondary.transform.localScale.z);
-                yield return null;
-            }
+            if (currentHealth <= 0)
+                Death();
         }
         #endregion
 
-        public void Revive(float health)
+        #region Restore and Death
+        //Method for reviving the character. Acts like a reset by setting most values back to
+        //default
+        public void Restore(float restoreHealth)
         {
+            currentHealth = restoreHealth;
+            previousHealth = currentHealth;
 
+            currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
+            Dead = false;
         }
+
+        //Death event to notify the GameManager that the character is dead
+        private void Death()
+        {
+            Dead = true;
+
+            if (lives > -1)
+                lives--;
+        }
+        #endregion
     }
 }

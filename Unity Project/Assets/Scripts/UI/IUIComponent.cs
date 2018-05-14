@@ -9,6 +9,6 @@ namespace UI
     public interface IUIComponent
     {
         void Hover(bool hover);
-        void Action(bool action);
+        void Press(bool press , PlayerNumber playerNumber);
     }
 }

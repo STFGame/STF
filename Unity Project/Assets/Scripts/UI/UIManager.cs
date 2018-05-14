@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Misc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,22 +7,31 @@ using UnityEngine;
 
 namespace UI
 {
+    /// <summary>
+    /// Class that manages the UI.
+    /// </summary>
     public class UIManager : MonoBehaviour
     {
-        //[SerializeField] private GameObject cursorOne;
-        //[SerializeField] private GameObject cursorTwo;
-        //[SerializeField] private GameObject cursorThree;
-        //[SerializeField] private GameObject cursorFour;
+        #region UIManager Variables
+        UICursorManager UICursorManager = null;
 
-        [SerializeField] private Cursor[] cursors;
+        public static bool MatchReady { get; private set; }
+        #endregion
 
+        #region Load
         private void Awake()
         {
-            
+            UICursorManager = GetComponent<UICursorManager>();
         }
+        #endregion
 
+        #region Updates
         private void Update()
         {
+
         }
+
+
+        #endregion
     }
 }

@@ -59,12 +59,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\BoxEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\BoxEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\HealthEditor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/PROTOTYPES/Unity Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/Unity Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/PROTOTYPES/Unity Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Program Files (x86)/Sean/Main/Games/Unity/Unity Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files/Unity 2018.1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

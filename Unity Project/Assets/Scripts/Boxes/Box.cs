@@ -6,17 +6,32 @@ using UnityEngine;
 
 namespace Boxes
 {
+    /// <summary>
+    /// Abstract class that contains general information related to boxes.
+    /// </summary>
     public abstract class Box : MonoBehaviour
     {
+        #region Box Variables
+        //The parent of the box
         [HideInInspector] public Transform parent;
-        [HideInInspector] public BoxArea boxArea;
-        [HideInInspector] public BoxType boxType;
-        [HideInInspector] public ColliderType colliderType;
-        [HideInInspector] public Color color;
 
+        //The area of the character that the box wants to be identified as
+        [HideInInspector] public BoxArea boxArea;
+
+        //The type of box that it is
+        [HideInInspector] public BoxType boxType;
+
+        //The collider shape
+        [HideInInspector] public ColliderType colliderType;
+
+        //The color of the debug drawing
+        [HideInInspector] public Color color;
+        #endregion
+
+        #region Debug Drawing
         private void OnDrawGizmos()
         {
-            if (parent == null || gameObject.layer == (int)Layer.PlayerDynamic)
+            if (parent == null || gameObject.layer == (int)Layer.Dead)
                 return;
 
             Gizmos.color = color;
@@ -31,5 +46,6 @@ namespace Boxes
                 Gizmos.DrawWireCube(parent.position + boxCollider.center, boxCollider.size);
             }
         }
+        #endregion
     }
 }

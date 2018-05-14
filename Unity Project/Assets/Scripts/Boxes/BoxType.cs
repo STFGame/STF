@@ -8,5 +8,6 @@ public enum BoxType
     None,
 
     Hurtbox,
-    Hitbox
+    Hitbox,
+    GroundBox,
 }

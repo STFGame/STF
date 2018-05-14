@@ -7,6 +7,8 @@ public enum BoxArea
 {
     None,
 
+    Root,
+
     Head,
     UpperTorso,
     MidTorso,

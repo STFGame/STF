@@ -1,34 +1,50 @@
 ﻿using Character;
+using Combat;
+using Survival;
 using UnityEngine;
 
 namespace Boxes
 {
     public class Hitbox : Box
     {
-        public delegate void HitChange(CharacterHealth health);
-        public event HitChange HitEvent;
+        #region Hitbox Variables
+        //finds the attack component on the character
+        IAttack attack = null;
+        #endregion
 
-        private bool isHit = false;
+        #region Load
+        private void Awake()
+        {
+            foreach (IAttack attack in GetComponentsInParent<IAttack>())
+                if (attack != null)
+                {
+                    this.attack = attack;
+                    break;
+                }
+        }
+        #endregion
 
+        #region Triggers
         private void OnTriggerEnter(Collider other)
         {
-            UpdateHit(other, true);
+            IDamagable[] damagables = other.GetComponentsInParent<IDamagable>();
+            for (int i = 0; i < damagables.Length; i++)
+                damagables[i].TakeDamage(attack.Damage);
+
+            attack.Hit = true;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            UpdateHit(null, false);
+            //attack.Hit = false;
         }
+        #endregion
 
-        private void UpdateHit(Collider other, bool isHit)
+        #region Enable
+        public void Enabled(bool enabled)
         {
-            if (this.isHit == isHit)
-                return;
-
-            this.isHit = isHit;
-
-            if (HitEvent != null)
-                HitEvent(other.GetComponent<CharacterHealth>());
+            gameObject.layer = (enabled) ? (int)Layer.Hitbox : (int)Layer.Dead;
         }
+        #endregion
     }
 }

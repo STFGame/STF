@@ -16,5 +16,5 @@ public enum Layer
     Hurtbox = 11,
     Hitbox = 12,
     GUI3D = 13,
-    Stage = 14
+    Dead = 14
 }

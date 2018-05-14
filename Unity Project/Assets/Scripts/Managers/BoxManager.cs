@@ -7,12 +7,18 @@ using UnityEngine;
 
 namespace Managers
 {
+    /// <summary>
+    /// Class that manages all of the different boxes that are associated with the character.
+    /// </summary>
     public class BoxManager : MonoBehaviour
     {
+        #region BoxManager Variables
         [HideInInspector] public List<GameObject> boxGameObjects = new List<GameObject>();
 
         private Dictionary<int, GameObject> boxDictionary = new Dictionary<int, GameObject>();
+        #endregion
 
+        #region Load
         private void Awake()
         {
             for (int i = 0; i < boxGameObjects.Count; i++)
@@ -29,7 +35,9 @@ namespace Managers
 
             boxDictionary.Add(hash, boxGameObject);
         }
+        #endregion
 
+        #region Hash
         private void Hash(ref int hashValue, BoxType key1, BoxArea key2)
         {
             switch (key1)
@@ -40,13 +48,18 @@ namespace Managers
                 case BoxType.Hurtbox:
                     hashValue += (int)key1 * 200;
                     break;
+                case BoxType.GroundBox:
+                    hashValue += (int)key1 * 2000;
+                    break;
                 default:
                     break;
             }
 
             hashValue += (int)key2;
         }
+        #endregion
 
+        #region Getters
         public GameObject GetGameBox(BoxType key1, BoxArea key2)
         {
             int hash = 0;
@@ -64,5 +77,6 @@ namespace Managers
                 box = GetGameBox(key1, key2).GetComponent<Box>();
             return box;
         }
+        #endregion
     }
 }
