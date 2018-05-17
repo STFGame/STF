@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: 96de6a3d7ca19d0499349d87a07410c2
+timeCreated: 1525158722
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ahoge1
+    100002: ahoge_small1
+    100004: ahoge_small2
+    100006: ahoge_small3
+    100008: ahoge_small4
+    100010: ahogeLarge1
+    100012: ahogeLarge2
+    100014: ahogeLarge3
+    100016: ahogeLarge4
+    100018: ahogeLarge5
+    100020: ahogeLarge6
+    100022: ahogeLarge_mesh
+    100024: ahogeSmall_mesh
+    100026: braid
+    100028: braid_2
+    100030: braid_3
+    100032: braid_4
+    100034: braid_5
+    100036: braid_end
+    100038: braid_mesh
+    100040: braid_tie
+    100042: //RootNode
+    100044: dynamicBone
+    100046: dynamicBraid
+    100048: dynamicJoint
+    100050: hair
+    100052: hair_mesh
+    100054: joint10
+    100056: joint11
+    100058: joint12
+    100060: joint13
+    100062: joint14
+    100064: joint15
+    100066: joint16
+    100068: joint17
+    100070: joint2
+    100072: joint21
+    100074: joint22
+    100076: joint23
+    100078: joint24
+    100080: joint26
+    100082: joint27
+    100084: joint28
+    100086: joint3
+    100088: joint4
+    100090: joint5
+    100092: joint6
+    100094: joint7
+    100096: joint8
+    100098: joint9
+    400000: ahoge1
+    400002: ahoge_small1
+    400004: ahoge_small2
+    400006: ahoge_small3
+    400008: ahoge_small4
+    400010: ahogeLarge1
+    400012: ahogeLarge2
+    400014: ahogeLarge3
+    400016: ahogeLarge4
+    400018: ahogeLarge5
+    400020: ahogeLarge6
+    400022: ahogeLarge_mesh
+    400024: ahogeSmall_mesh
+    400026: braid
+    400028: braid_2
+    400030: braid_3
+    400032: braid_4
+    400034: braid_5
+    400036: braid_end
+    400038: braid_mesh
+    400040: braid_tie
+    400042: //RootNode
+    400044: dynamicBone
+    400046: dynamicBraid
+    400048: dynamicJoint
+    400050: hair
+    400052: hair_mesh
+    400054: joint10
+    400056: joint11
+    400058: joint12
+    400060: joint13
+    400062: joint14
+    400064: joint15
+    400066: joint16
+    400068: joint17
+    400070: joint2
+    400072: joint21
+    400074: joint22
+    400076: joint23
+    400078: joint24
+    400080: joint26
+    400082: joint27
+    400084: joint28
+    400086: joint3
+    400088: joint4
+    400090: joint5
+    400092: joint6
+    400094: joint7
+    400096: joint8
+    400098: joint9
+    2100000: lambert1
+    4300000: ahogeLarge_mesh
+    4300002: ahogeSmall_mesh
+    4300004: hair_mesh
+    4300006: braid_mesh
+    9500000: //RootNode
+    13700000: ahogeLarge_mesh
+    13700002: ahogeSmall_mesh
+    13700004: braid_mesh
+    13700006: hair_mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
