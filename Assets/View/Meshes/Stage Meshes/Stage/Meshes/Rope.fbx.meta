@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: d41f51ee6b8edcb48994fa07c016512d
+timeCreated: 1527546910
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back_rope_02
+    100002: back_rope_03
+    100004: backchain_joint_01
+    100006: backchain_joint_02
+    100008: backchain_joint_03
+    100010: backchain_joint_04
+    100012: backchain_joint_05
+    100014: backchain_joint_06
+    100016: backchain_joint_end
+    100018: cluster14Handle
+    100020: cluster15Handle
+    100022: cluster17Handle
+    100024: cluster18Handle
+    100026: cluster21Handle
+    100028: cluster22Handle
+    100030: curve5
+    100032: curve6
+    100034: curve7
+    100036: group14
+    100038: group15
+    100040: group18
+    100042: group19
+    100044: group22
+    100046: group23
+    100048: joint29
+    100050: L_rope_02
+    100052: L_rope_03
+    100054: L_rope_06
+    100056: L_rope_08
+    100058: leftchain_joint_01
+    100060: leftchain_joint_02
+    100062: leftchain_joint_03
+    100064: leftchain_joint_04
+    100066: leftchain_joint_05
+    100068: leftchain_joint_06
+    100070: leftchain_joint_07
+    100072: leftchain_joint_08
+    100074: leftchain_joint_end
+    100076: null_joint_01
+    100078: null_joint_02
+    100080: null_joint_03
+    100082: null_joint_04
+    100084: rightchain_joint_01
+    100086: rightchain_joint_02
+    100088: rightchain_joint_03
+    100090: rightchain_joint_04
+    100092: rightchain_joint_05
+    100094: rightchain_joint_06
+    100096: rightchain_joint_07
+    100098: rightchain_joint_end
+    100100: rope
+    100102: //RootNode
+    400000: back_rope_02
+    400002: back_rope_03
+    400004: backchain_joint_01
+    400006: backchain_joint_02
+    400008: backchain_joint_03
+    400010: backchain_joint_04
+    400012: backchain_joint_05
+    400014: backchain_joint_06
+    400016: backchain_joint_end
+    400018: cluster14Handle
+    400020: cluster15Handle
+    400022: cluster17Handle
+    400024: cluster18Handle
+    400026: cluster21Handle
+    400028: cluster22Handle
+    400030: curve5
+    400032: curve6
+    400034: curve7
+    400036: group14
+    400038: group15
+    400040: group18
+    400042: group19
+    400044: group22
+    400046: group23
+    400048: joint29
+    400050: L_rope_02
+    400052: L_rope_03
+    400054: L_rope_06
+    400056: L_rope_08
+    400058: leftchain_joint_01
+    400060: leftchain_joint_02
+    400062: leftchain_joint_03
+    400064: leftchain_joint_04
+    400066: leftchain_joint_05
+    400068: leftchain_joint_06
+    400070: leftchain_joint_07
+    400072: leftchain_joint_08
+    400074: leftchain_joint_end
+    400076: null_joint_01
+    400078: null_joint_02
+    400080: null_joint_03
+    400082: null_joint_04
+    400084: rightchain_joint_01
+    400086: rightchain_joint_02
+    400088: rightchain_joint_03
+    400090: rightchain_joint_04
+    400092: rightchain_joint_05
+    400094: rightchain_joint_06
+    400096: rightchain_joint_07
+    400098: rightchain_joint_end
+    400100: rope
+    400102: //RootNode
+    2100000: lambert1
+    4300000: rope
+    7400000: Wind
+    9500000: //RootNode
+    13700000: rope
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Wind
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

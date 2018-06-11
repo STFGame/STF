@@ -1,0 +1,894 @@
+fileFormatVersion: 2
+guid: fb0647498ee85fc4288ea866239cf2aa
+timeCreated: 1525156170
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back1
+    100002: back2
+    100004: back3
+    100006: back4
+    100008: back5
+    100010: back6
+    100012: back7
+    100014: backBend_CTRL
+    100016: body_CTRL
+    100018: bootBrace
+    100020: boots
+    100022: bracerplates
+    100024: bracers1
+    100026: bracerstraps
+    100028: C_belt
+    100030: C_chest
+    100032: C_corset
+    100034: C_pants
+    100036: eyes_CTRL
+    100038: face_neutral
+    100040: GEO
+    100042: greaves
+    100044: head
+    100046: head_CTRL
+    100048: IK_GRP
+    100050: joint1
+    100052: joint1 1
+    100054: joint10
+    100056: joint10 1
+    100058: joint11
+    100060: joint11 1
+    100062: joint12
+    100064: joint12 1
+    100066: joint13
+    100068: joint13 1
+    100070: joint14
+    100072: joint14 1
+    100074: joint15
+    100076: joint15 1
+    100078: joint2
+    100080: joint2 1
+    100082: joint3
+    100084: joint3 1
+    100086: joint7
+    100088: joint7 1
+    100090: joint8
+    100092: joint8 1
+    100094: joint9
+    100096: joint9 1
+    100098: L_breast
+    100100: L_breast_CTRL
+    100102: L_eyeball
+    100104: L_eyeball 1
+    100106: L_hand
+    100108: L_handArmor
+    100110: L_index_CTRL
+    100112: L_indexConnect1
+    100114: L_indexConnect2
+    100116: L_indexKnuckle
+    100118: L_indexMiddle
+    100120: L_indexTip
+    100122: L_iris
+    100124: L_iris 1
+    100126: L_middle_CTRL
+    100128: L_middleConnect1
+    100130: L_middleConnect2
+    100132: L_middleKnuckle
+    100134: L_middleMiddle
+    100136: L_middleTip
+    100138: L_palm
+    100140: L_pinky_CTRL
+    100142: L_pinkyConnect1
+    100144: L_pinkyConnect2
+    100146: L_pinkyKnuckle
+    100148: L_pinkyMiddle
+    100150: L_pinkyTip
+    100152: L_pointer
+    100154: L_pointer1
+    100156: L_pointer3
+    100158: L_pointer_CTRL
+    100160: L_pointerConnect1
+    100162: L_pointerConnect2
+    100164: L_pointerKnuckle
+    100166: L_pointerMiddle
+    100168: L_pointerTip
+    100170: L_pointerTip 1
+    100172: L_pupil
+    100174: L_pupil 1
+    100176: L_thighArmor_CTRL
+    100178: L_thighGuard
+    100180: L_thighGuard1
+    100182: L_thighGuardCloth
+    100184: L_thighGuardCloth 1
+    100186: L_thighPad_joint1
+    100188: L_thighPad_joint2
+    100190: L_thumb1
+    100192: L_thumb2
+    100194: L_thumb3
+    100196: L_thumb_CTRL
+    100198: L_thumbConnect1
+    100200: L_thumbConnect2
+    100202: L_thumbMiddle
+    100204: L_thumbTip
+    100206: L_thumbTip 1
+    100208: LB_ankle
+    100210: LB_ball
+    100212: LB_dummyHip1
+    100214: LB_dummyHip2
+    100216: LB_elbow
+    100218: LB_forearm
+    100220: LB_hip
+    100222: LB_knee
+    100224: LB_kneeDummy1
+    100226: LB_kneeDummy2
+    100228: LB_shoulder
+    100230: LB_toeTip
+    100232: LB_wrist
+    100234: LIK_ankle
+    100236: LIK_ball
+    100238: LIK_clavical_CTRL
+    100240: LIK_clavicle
+    100242: LIK_dummyHip1
+    100244: LIK_dummyHip2
+    100246: LIK_dummyKnee1
+    100248: LIK_dummyKnee2
+    100250: LIK_elbow
+    100252: LIK_foot_CTRL
+    100254: LIK_forearm
+    100256: LIK_hand_CTRL
+    100258: LIK_hip
+    100260: LIK_knee
+    100262: LIK_shoulder
+    100264: LIK_toeTip
+    100266: LIK_wrist
+    100268: LN_ankle
+    100270: LN_armControl1
+    100272: LN_armControl2
+    100274: LN_armControl3
+    100276: LN_armControl4
+    100278: LN_armControls
+    100280: LN_ball
+    100282: LN_clavicle
+    100284: LN_dummyHip1
+    100286: LN_dummyHip2
+    100288: LN_dummyKnee1
+    100290: LN_dummyKnee2
+    100292: LN_elbow
+    100294: LN_forearm
+    100296: LN_hip
+    100298: LN_knee
+    100300: LN_legControl1
+    100302: LN_legControl2
+    100304: LN_legControl3
+    100306: LN_legControl4
+    100308: LN_legControl5
+    100310: LN_legControl6
+    100312: LN_legControl7
+    100314: LN_legControl8
+    100316: LN_legControls
+    100318: LN_shoulder
+    100320: LN_toeTip
+    100322: LN_wrist
+    100324: lowerBack_CTRL
+    100326: lowerTeeth
+    100328: neck
+    100330: //RootNode
+    100332: NOODLE_GRP
+    100334: poleyns
+    100336: poleynsRear
+    100338: R_breast
+    100340: R_breast_CTRL
+    100342: R_eyeball
+    100344: R_eyeball 1
+    100346: R_hand
+    100348: R_handArmor
+    100350: R_index_CTRL
+    100352: R_indexConnect1
+    100354: R_indexConnect2
+    100356: R_indexKnuckle
+    100358: R_indexMiddle
+    100360: R_indexTip
+    100362: R_iris
+    100364: R_iris 1
+    100366: R_middle_CTRL
+    100368: R_middleConnect1
+    100370: R_middleConnect2
+    100372: R_middleKnuckle
+    100374: R_middleMiddle
+    100376: R_middleTip
+    100378: R_palm
+    100380: R_pinky_CTRL
+    100382: R_pinkyConnect1
+    100384: R_pinkyConnect2
+    100386: R_pinkyKnuckle
+    100388: R_pinkyMiddle
+    100390: R_pinkyTip
+    100392: R_pointer1
+    100394: R_pointer2
+    100396: R_pointer3
+    100398: R_pointer_CTRL
+    100400: R_pointerConnect1
+    100402: R_pointerConnect2
+    100404: R_pointerKnuckle
+    100406: R_pointerMiddle
+    100408: R_pointerTip
+    100410: R_pointerTip 1
+    100412: R_pupil
+    100414: R_pupil 1
+    100416: R_thighArmor_CTRL
+    100418: R_thighPad_joint1
+    100420: R_thighPad_joint2
+    100422: R_thumb1
+    100424: R_thumb2
+    100426: R_thumb3
+    100428: R_thumb_CTRL
+    100430: R_thumbConnect1
+    100432: R_thumbConnect2
+    100434: R_thumbMiddle
+    100436: R_thumbTip
+    100438: R_thumbTip 1
+    100440: RB_ankle
+    100442: RB_ball
+    100444: RB_dummyHip1
+    100446: RB_dummyHip2
+    100448: RB_elbow
+    100450: RB_forearm
+    100452: RB_knee
+    100454: RB_kneeDummy1
+    100456: RB_kneeDummy2
+    100458: RB_shoulder
+    100460: RB_toeTip
+    100462: RB_wrist
+    100464: RIK_ankle
+    100466: RIK_ball
+    100468: RIK_clavical_CTRL
+    100470: RIK_clavicle
+    100472: RIK_dummyHip1
+    100474: RIK_dummyHip2
+    100476: RIK_dummyKnee1
+    100478: RIK_dummyKnee2
+    100480: RIK_elbow
+    100482: RIK_foot_CTRL
+    100484: RIK_forearm
+    100486: RIK_hand_CTRL
+    100488: RIK_hip
+    100490: RIK_knee
+    100492: RIK_shoulder
+    100494: RIK_toeTip
+    100496: RIK_wrist
+    100498: RN_ankle
+    100500: RN_armControl1
+    100502: RN_armControl2
+    100504: RN_armControl3
+    100506: RN_armControl4
+    100508: RN_armControls
+    100510: RN_ball
+    100512: RN_clavicle
+    100514: RN_dummyHip1
+    100516: RN_dummyHip2
+    100518: RN_dummyKnee1
+    100520: RN_dummyKnee2
+    100522: RN_elbow
+    100524: RN_forearm
+    100526: RN_hip
+    100528: RN_knee
+    100530: RN_legControl1
+    100532: RN_legControl2
+    100534: RN_legControl3
+    100536: RN_legControl4
+    100538: RN_legControl5
+    100540: RN_legControl6
+    100542: RN_legControl7
+    100544: RN_legControl8
+    100546: RN_legControls
+    100548: RN_shoulder
+    100550: RN_toeTip
+    100552: RN_wrist
+    100554: root
+    100556: shoulders
+    100558: sleeves
+    100560: superMover_CTRL
+    100562: temp_hair
+    100564: tooth
+    100566: upperBack_CTRL
+    100568: upperTeeth
+    100570: wrists
+    400000: back1
+    400002: back2
+    400004: back3
+    400006: back4
+    400008: back5
+    400010: back6
+    400012: back7
+    400014: backBend_CTRL
+    400016: body_CTRL
+    400018: bootBrace
+    400020: boots
+    400022: bracerplates
+    400024: bracers1
+    400026: bracerstraps
+    400028: C_belt
+    400030: C_chest
+    400032: C_corset
+    400034: C_pants
+    400036: eyes_CTRL
+    400038: face_neutral
+    400040: GEO
+    400042: greaves
+    400044: head
+    400046: head_CTRL
+    400048: IK_GRP
+    400050: joint1
+    400052: joint1 1
+    400054: joint10
+    400056: joint10 1
+    400058: joint11
+    400060: joint11 1
+    400062: joint12
+    400064: joint12 1
+    400066: joint13
+    400068: joint13 1
+    400070: joint14
+    400072: joint14 1
+    400074: joint15
+    400076: joint15 1
+    400078: joint2
+    400080: joint2 1
+    400082: joint3
+    400084: joint3 1
+    400086: joint7
+    400088: joint7 1
+    400090: joint8
+    400092: joint8 1
+    400094: joint9
+    400096: joint9 1
+    400098: L_breast
+    400100: L_breast_CTRL
+    400102: L_eyeball
+    400104: L_eyeball 1
+    400106: L_hand
+    400108: L_handArmor
+    400110: L_index_CTRL
+    400112: L_indexConnect1
+    400114: L_indexConnect2
+    400116: L_indexKnuckle
+    400118: L_indexMiddle
+    400120: L_indexTip
+    400122: L_iris
+    400124: L_iris 1
+    400126: L_middle_CTRL
+    400128: L_middleConnect1
+    400130: L_middleConnect2
+    400132: L_middleKnuckle
+    400134: L_middleMiddle
+    400136: L_middleTip
+    400138: L_palm
+    400140: L_pinky_CTRL
+    400142: L_pinkyConnect1
+    400144: L_pinkyConnect2
+    400146: L_pinkyKnuckle
+    400148: L_pinkyMiddle
+    400150: L_pinkyTip
+    400152: L_pointer
+    400154: L_pointer1
+    400156: L_pointer3
+    400158: L_pointer_CTRL
+    400160: L_pointerConnect1
+    400162: L_pointerConnect2
+    400164: L_pointerKnuckle
+    400166: L_pointerMiddle
+    400168: L_pointerTip
+    400170: L_pointerTip 1
+    400172: L_pupil
+    400174: L_pupil 1
+    400176: L_thighArmor_CTRL
+    400178: L_thighGuard
+    400180: L_thighGuard1
+    400182: L_thighGuardCloth
+    400184: L_thighGuardCloth 1
+    400186: L_thighPad_joint1
+    400188: L_thighPad_joint2
+    400190: L_thumb1
+    400192: L_thumb2
+    400194: L_thumb3
+    400196: L_thumb_CTRL
+    400198: L_thumbConnect1
+    400200: L_thumbConnect2
+    400202: L_thumbMiddle
+    400204: L_thumbTip
+    400206: L_thumbTip 1
+    400208: LB_ankle
+    400210: LB_ball
+    400212: LB_dummyHip1
+    400214: LB_dummyHip2
+    400216: LB_elbow
+    400218: LB_forearm
+    400220: LB_hip
+    400222: LB_knee
+    400224: LB_kneeDummy1
+    400226: LB_kneeDummy2
+    400228: LB_shoulder
+    400230: LB_toeTip
+    400232: LB_wrist
+    400234: LIK_ankle
+    400236: LIK_ball
+    400238: LIK_clavical_CTRL
+    400240: LIK_clavicle
+    400242: LIK_dummyHip1
+    400244: LIK_dummyHip2
+    400246: LIK_dummyKnee1
+    400248: LIK_dummyKnee2
+    400250: LIK_elbow
+    400252: LIK_foot_CTRL
+    400254: LIK_forearm
+    400256: LIK_hand_CTRL
+    400258: LIK_hip
+    400260: LIK_knee
+    400262: LIK_shoulder
+    400264: LIK_toeTip
+    400266: LIK_wrist
+    400268: LN_ankle
+    400270: LN_armControl1
+    400272: LN_armControl2
+    400274: LN_armControl3
+    400276: LN_armControl4
+    400278: LN_armControls
+    400280: LN_ball
+    400282: LN_clavicle
+    400284: LN_dummyHip1
+    400286: LN_dummyHip2
+    400288: LN_dummyKnee1
+    400290: LN_dummyKnee2
+    400292: LN_elbow
+    400294: LN_forearm
+    400296: LN_hip
+    400298: LN_knee
+    400300: LN_legControl1
+    400302: LN_legControl2
+    400304: LN_legControl3
+    400306: LN_legControl4
+    400308: LN_legControl5
+    400310: LN_legControl6
+    400312: LN_legControl7
+    400314: LN_legControl8
+    400316: LN_legControls
+    400318: LN_shoulder
+    400320: LN_toeTip
+    400322: LN_wrist
+    400324: lowerBack_CTRL
+    400326: lowerTeeth
+    400328: neck
+    400330: //RootNode
+    400332: NOODLE_GRP
+    400334: poleyns
+    400336: poleynsRear
+    400338: R_breast
+    400340: R_breast_CTRL
+    400342: R_eyeball
+    400344: R_eyeball 1
+    400346: R_hand
+    400348: R_handArmor
+    400350: R_index_CTRL
+    400352: R_indexConnect1
+    400354: R_indexConnect2
+    400356: R_indexKnuckle
+    400358: R_indexMiddle
+    400360: R_indexTip
+    400362: R_iris
+    400364: R_iris 1
+    400366: R_middle_CTRL
+    400368: R_middleConnect1
+    400370: R_middleConnect2
+    400372: R_middleKnuckle
+    400374: R_middleMiddle
+    400376: R_middleTip
+    400378: R_palm
+    400380: R_pinky_CTRL
+    400382: R_pinkyConnect1
+    400384: R_pinkyConnect2
+    400386: R_pinkyKnuckle
+    400388: R_pinkyMiddle
+    400390: R_pinkyTip
+    400392: R_pointer1
+    400394: R_pointer2
+    400396: R_pointer3
+    400398: R_pointer_CTRL
+    400400: R_pointerConnect1
+    400402: R_pointerConnect2
+    400404: R_pointerKnuckle
+    400406: R_pointerMiddle
+    400408: R_pointerTip
+    400410: R_pointerTip 1
+    400412: R_pupil
+    400414: R_pupil 1
+    400416: R_thighArmor_CTRL
+    400418: R_thighPad_joint1
+    400420: R_thighPad_joint2
+    400422: R_thumb1
+    400424: R_thumb2
+    400426: R_thumb3
+    400428: R_thumb_CTRL
+    400430: R_thumbConnect1
+    400432: R_thumbConnect2
+    400434: R_thumbMiddle
+    400436: R_thumbTip
+    400438: R_thumbTip 1
+    400440: RB_ankle
+    400442: RB_ball
+    400444: RB_dummyHip1
+    400446: RB_dummyHip2
+    400448: RB_elbow
+    400450: RB_forearm
+    400452: RB_knee
+    400454: RB_kneeDummy1
+    400456: RB_kneeDummy2
+    400458: RB_shoulder
+    400460: RB_toeTip
+    400462: RB_wrist
+    400464: RIK_ankle
+    400466: RIK_ball
+    400468: RIK_clavical_CTRL
+    400470: RIK_clavicle
+    400472: RIK_dummyHip1
+    400474: RIK_dummyHip2
+    400476: RIK_dummyKnee1
+    400478: RIK_dummyKnee2
+    400480: RIK_elbow
+    400482: RIK_foot_CTRL
+    400484: RIK_forearm
+    400486: RIK_hand_CTRL
+    400488: RIK_hip
+    400490: RIK_knee
+    400492: RIK_shoulder
+    400494: RIK_toeTip
+    400496: RIK_wrist
+    400498: RN_ankle
+    400500: RN_armControl1
+    400502: RN_armControl2
+    400504: RN_armControl3
+    400506: RN_armControl4
+    400508: RN_armControls
+    400510: RN_ball
+    400512: RN_clavicle
+    400514: RN_dummyHip1
+    400516: RN_dummyHip2
+    400518: RN_dummyKnee1
+    400520: RN_dummyKnee2
+    400522: RN_elbow
+    400524: RN_forearm
+    400526: RN_hip
+    400528: RN_knee
+    400530: RN_legControl1
+    400532: RN_legControl2
+    400534: RN_legControl3
+    400536: RN_legControl4
+    400538: RN_legControl5
+    400540: RN_legControl6
+    400542: RN_legControl7
+    400544: RN_legControl8
+    400546: RN_legControls
+    400548: RN_shoulder
+    400550: RN_toeTip
+    400552: RN_wrist
+    400554: root
+    400556: shoulders
+    400558: sleeves
+    400560: superMover_CTRL
+    400562: temp_hair
+    400564: tooth
+    400566: upperBack_CTRL
+    400568: upperTeeth
+    400570: wrists
+    2100000: lambert1
+    2100002: eyeBall_shader
+    2100004: iris_shader
+    2300000: L_eyeball 1
+    2300002: L_handArmor
+    2300004: L_indexConnect1
+    2300006: L_indexConnect2
+    2300008: L_indexKnuckle
+    2300010: L_indexMiddle
+    2300012: L_indexTip
+    2300014: L_iris 1
+    2300016: L_middleConnect1
+    2300018: L_middleConnect2
+    2300020: L_middleKnuckle
+    2300022: L_middleMiddle
+    2300024: L_middleTip
+    2300026: L_palm
+    2300028: L_pinkyConnect1
+    2300030: L_pinkyConnect2
+    2300032: L_pinkyKnuckle
+    2300034: L_pinkyMiddle
+    2300036: L_pinkyTip
+    2300038: L_pointerConnect1
+    2300040: L_pointerConnect2
+    2300042: L_pointerKnuckle
+    2300044: L_pointerMiddle
+    2300046: L_pointerTip 1
+    2300048: L_pupil 1
+    2300050: L_thighGuard
+    2300052: L_thighGuard1
+    2300054: L_thighGuardCloth
+    2300056: L_thighGuardCloth 1
+    2300058: L_thumbConnect1
+    2300060: L_thumbConnect2
+    2300062: L_thumbMiddle
+    2300064: L_thumbTip 1
+    2300066: lowerTeeth
+    2300068: R_eyeball 1
+    2300070: R_handArmor
+    2300072: R_indexConnect1
+    2300074: R_indexConnect2
+    2300076: R_indexKnuckle
+    2300078: R_indexMiddle
+    2300080: R_indexTip
+    2300082: R_iris 1
+    2300084: R_middleConnect1
+    2300086: R_middleConnect2
+    2300088: R_middleKnuckle
+    2300090: R_middleMiddle
+    2300092: R_middleTip
+    2300094: R_palm
+    2300096: R_pinkyConnect1
+    2300098: R_pinkyConnect2
+    2300100: R_pinkyKnuckle
+    2300102: R_pinkyMiddle
+    2300104: R_pinkyTip
+    2300106: R_pointerConnect1
+    2300108: R_pointerConnect2
+    2300110: R_pointerKnuckle
+    2300112: R_pointerMiddle
+    2300114: R_pointerTip 1
+    2300116: R_pupil 1
+    2300118: R_thumbConnect1
+    2300120: R_thumbConnect2
+    2300122: R_thumbMiddle
+    2300124: R_thumbTip 1
+    2300126: temp_hair
+    2300128: tooth
+    2300130: upperTeeth
+    3300000: L_eyeball 1
+    3300002: L_handArmor
+    3300004: L_indexConnect1
+    3300006: L_indexConnect2
+    3300008: L_indexKnuckle
+    3300010: L_indexMiddle
+    3300012: L_indexTip
+    3300014: L_iris 1
+    3300016: L_middleConnect1
+    3300018: L_middleConnect2
+    3300020: L_middleKnuckle
+    3300022: L_middleMiddle
+    3300024: L_middleTip
+    3300026: L_palm
+    3300028: L_pinkyConnect1
+    3300030: L_pinkyConnect2
+    3300032: L_pinkyKnuckle
+    3300034: L_pinkyMiddle
+    3300036: L_pinkyTip
+    3300038: L_pointerConnect1
+    3300040: L_pointerConnect2
+    3300042: L_pointerKnuckle
+    3300044: L_pointerMiddle
+    3300046: L_pointerTip 1
+    3300048: L_pupil 1
+    3300050: L_thighGuard
+    3300052: L_thighGuard1
+    3300054: L_thighGuardCloth
+    3300056: L_thighGuardCloth 1
+    3300058: L_thumbConnect1
+    3300060: L_thumbConnect2
+    3300062: L_thumbMiddle
+    3300064: L_thumbTip 1
+    3300066: lowerTeeth
+    3300068: R_eyeball 1
+    3300070: R_handArmor
+    3300072: R_indexConnect1
+    3300074: R_indexConnect2
+    3300076: R_indexKnuckle
+    3300078: R_indexMiddle
+    3300080: R_indexTip
+    3300082: R_iris 1
+    3300084: R_middleConnect1
+    3300086: R_middleConnect2
+    3300088: R_middleKnuckle
+    3300090: R_middleMiddle
+    3300092: R_middleTip
+    3300094: R_palm
+    3300096: R_pinkyConnect1
+    3300098: R_pinkyConnect2
+    3300100: R_pinkyKnuckle
+    3300102: R_pinkyMiddle
+    3300104: R_pinkyTip
+    3300106: R_pointerConnect1
+    3300108: R_pointerConnect2
+    3300110: R_pointerKnuckle
+    3300112: R_pointerMiddle
+    3300114: R_pointerTip 1
+    3300116: R_pupil 1
+    3300118: R_thumbConnect1
+    3300120: R_thumbConnect2
+    3300122: R_thumbMiddle
+    3300124: R_thumbTip 1
+    3300126: temp_hair
+    3300128: tooth
+    3300130: upperTeeth
+    4300000: C_belt
+    4300002: C_pants
+    4300004: C_corset
+    4300006: C_chest
+    4300008: boots
+    4300010: bootBrace
+    4300012: greaves
+    4300014: poleyns
+    4300016: poleynsRear
+    4300018: sleeves
+    4300020: bracers1
+    4300022: bracerstraps
+    4300024: bracerplates
+    4300026: shoulders
+    4300028: wrists
+    4300030: face_neutral
+    4300032: L_thumbTip
+    4300034: L_thumbConnect2
+    4300036: L_thumbMiddle
+    4300038: L_thumbConnect1
+    4300040: L_pointerTip
+    4300042: L_pointerConnect2
+    4300044: L_pointerMiddle
+    4300046: L_pointerConnect1
+    4300048: L_middleTip
+    4300050: L_middleConnect2
+    4300052: L_middleMiddle
+    4300054: L_middleConnect1
+    4300056: L_indexTip
+    4300058: L_indexConnect2
+    4300060: L_indexMiddle
+    4300062: L_indexConnect1
+    4300064: L_pinkyTip
+    4300066: L_pinkyConnect2
+    4300068: L_pinkyMiddle
+    4300070: L_pinkyConnect1
+    4300072: L_palm
+    4300074: L_handArmor
+    4300076: L_pointerKnuckle
+    4300078: L_middleKnuckle
+    4300080: L_indexKnuckle
+    4300082: L_pinkyKnuckle
+    4300084: R_thumbTip
+    4300086: R_thumbConnect2
+    4300088: R_thumbMiddle
+    4300090: R_thumbConnect1
+    4300092: R_pointerTip
+    4300094: R_pointerConnect2
+    4300096: R_pointerMiddle
+    4300098: R_pointerConnect1
+    4300100: R_middleTip
+    4300102: R_middleConnect2
+    4300104: R_middleMiddle
+    4300106: R_middleConnect1
+    4300108: R_indexTip
+    4300110: R_indexConnect2
+    4300112: R_indexMiddle
+    4300114: R_indexConnect1
+    4300116: R_pinkyTip
+    4300118: R_pinkyConnect2
+    4300120: R_pinkyMiddle
+    4300122: R_pinkyConnect1
+    4300124: R_palm
+    4300126: R_handArmor
+    4300128: R_pointerKnuckle
+    4300130: R_middleKnuckle
+    4300132: R_indexKnuckle
+    4300134: R_pinkyKnuckle
+    4300136: L_eyeball
+    4300138: L_pupil
+    4300140: L_iris
+    4300142: R_eyeball
+    4300144: R_pupil
+    4300146: R_iris
+    4300148: tooth
+    4300150: lowerTeeth
+    4300152: upperTeeth
+    4300154: temp_hair
+    4300156: L_thighGuard
+    4300158: L_thighGuardCloth
+    4300160: L_thighGuard1
+    4300162: L_thighGuardCloth
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: bootBrace
+    13700002: boots
+    13700004: bracerplates
+    13700006: bracers1
+    13700008: bracerstraps
+    13700010: C_belt
+    13700012: C_chest
+    13700014: C_corset
+    13700016: C_pants
+    13700018: face_neutral
+    13700020: greaves
+    13700022: poleyns
+    13700024: poleynsRear
+    13700026: shoulders
+    13700028: sleeves
+    13700030: wrists
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

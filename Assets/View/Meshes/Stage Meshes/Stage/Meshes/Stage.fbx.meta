@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: ce3c88cfbe6699248b7ba034963e56b0
+timeCreated: 1527549931
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: awnings
+    100002: back_steps
+    100004: back_wall
+    100006: backwalls
+    100008: ballisters
+    100010: brazier
+    100012: chair
+    100014: columns
+    100016: entrance
+    100018: floor
+    100020: ground
+    100022: incense_pots
+    100024: pole
+    100026: stage
+    100028: //RootNode
+    100030: wall_front
+    400000: awnings
+    400002: back_steps
+    400004: back_wall
+    400006: backwalls
+    400008: ballisters
+    400010: brazier
+    400012: chair
+    400014: columns
+    400016: entrance
+    400018: floor
+    400020: ground
+    400022: incense_pots
+    400024: pole
+    400026: stage
+    400028: //RootNode
+    400030: wall_front
+    2100000: blinn9
+    2100002: chair2
+    2100004: backwall_decal
+    2100006: stair_floor
+    2100008: incense
+    2100010: wall
+    2100012: blinn11
+    2100014: lambert1
+    2100016: wedgeclothBlazier
+    2100018: sephilcre
+    2100020: cliff1
+    2100022: column
+    2300000: awnings
+    2300002: back_steps
+    2300004: back_wall
+    2300006: backwalls
+    2300008: ballisters
+    2300010: brazier
+    2300012: chair
+    2300014: columns
+    2300016: entrance
+    2300018: floor
+    2300020: ground
+    2300022: incense_pots
+    2300024: pole
+    2300026: stage
+    2300028: wall_front
+    3300000: awnings
+    3300002: back_steps
+    3300004: back_wall
+    3300006: backwalls
+    3300008: ballisters
+    3300010: brazier
+    3300012: chair
+    3300014: columns
+    3300016: entrance
+    3300018: floor
+    3300020: ground
+    3300022: incense_pots
+    3300024: pole
+    3300026: stage
+    3300028: wall_front
+    4300000: stage
+    4300002: chair
+    4300004: backwalls
+    4300006: back_steps
+    4300008: incense_pots
+    4300010: back_wall
+    4300012: floor
+    4300014: pole
+    4300016: ballisters
+    4300018: wall_front
+    4300020: brazier
+    4300022: awnings
+    4300024: entrance
+    4300026: ground
+    4300028: columns
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

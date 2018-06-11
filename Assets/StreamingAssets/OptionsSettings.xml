@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<GameSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Resolution>12</Resolution>
+  <TextureQuality>1</TextureQuality>
+  <Antialiasing>0</Antialiasing>
+  <vSync>0</vSync>
+  <MusicVolume>42.8572273</MusicVolume>
+  <FullScreen>false</FullScreen>
+</GameSettings>

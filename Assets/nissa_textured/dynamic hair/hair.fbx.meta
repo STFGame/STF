@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 385f57816e1b88645af7c220e1488b35
+timeCreated: 1528440913
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: hair
+    100004: hair_joint10
+    100006: hair_joint11
+    100008: hair_joint12
+    100010: hair_joint13
+    100012: hair_joint14
+    100014: hair_joint15
+    100016: hair_joint16
+    100018: hair_joint17
+    100020: hair_joint18
+    100022: hair_joint19
+    100024: hair_joint20
+    100026: hair_joint21
+    100028: hair_joint22
+    100030: hair_joint23
+    100032: hair_joint24
+    100034: hair_joint25
+    100036: hair_joint26
+    100038: hair_joint27
+    100040: hair_joint28
+    100042: hair_joint29
+    100044: hair_joint30
+    100046: hair_joint31
+    100048: hair_joint32
+    100050: hair_joint33
+    100052: hair_joint34
+    100054: hair_joint35
+    100056: hair_joint36
+    100058: hair_joint37
+    100060: hair_joint38
+    100062: hair_joint39
+    100064: hair_joint40
+    100066: hair_joint41
+    100068: hair_joint42
+    100070: hair_joint43
+    100072: hair_joint44
+    100074: hair_joint45
+    100076: hair_joint46
+    100078: hair_joint_main
+    400000: hair
+    400002: //RootNode
+    400004: hair_joint10
+    400006: hair_joint11
+    400008: hair_joint12
+    400010: hair_joint13
+    400012: hair_joint14
+    400014: hair_joint15
+    400016: hair_joint16
+    400018: hair_joint17
+    400020: hair_joint18
+    400022: hair_joint19
+    400024: hair_joint20
+    400026: hair_joint21
+    400028: hair_joint22
+    400030: hair_joint23
+    400032: hair_joint24
+    400034: hair_joint25
+    400036: hair_joint26
+    400038: hair_joint27
+    400040: hair_joint28
+    400042: hair_joint29
+    400044: hair_joint30
+    400046: hair_joint31
+    400048: hair_joint32
+    400050: hair_joint33
+    400052: hair_joint34
+    400054: hair_joint35
+    400056: hair_joint36
+    400058: hair_joint37
+    400060: hair_joint38
+    400062: hair_joint39
+    400064: hair_joint40
+    400066: hair_joint41
+    400068: hair_joint42
+    400070: hair_joint43
+    400072: hair_joint44
+    400074: hair_joint45
+    400076: hair_joint46
+    400078: hair_joint_main
+    2100000: blinn1
+    4300000: hair
+    9500000: //RootNode
+    13700000: hair
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
